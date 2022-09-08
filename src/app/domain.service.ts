@@ -29,6 +29,7 @@ export class DomainService {
         console.log(res.body, 'res.body')
         return res
       }))
+      //TODO: dispatch action to NgRx store;
     return response
   }
 }

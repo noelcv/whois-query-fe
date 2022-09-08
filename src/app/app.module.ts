@@ -11,6 +11,7 @@ import { ResultsComponent } from './results/results.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DomainService } from './domain.service';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [HttpClientModule, DomainService],
   bootstrap: [AppComponent]
