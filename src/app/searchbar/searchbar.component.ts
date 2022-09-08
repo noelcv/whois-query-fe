@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-searchbar',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchbar.component.css']
 })
 export class SearchbarComponent implements OnInit {
-
-  constructor() { }
+  selectedTld = 'com';
+  domainQueryForm = this.formBuilder.group({
+    sldInput: '',
+    tldInput: ''
+  });
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.domainQueryForm.valueChanges.subscribe( form => {
+      console.log(form)
+    })
   }
 
 }
