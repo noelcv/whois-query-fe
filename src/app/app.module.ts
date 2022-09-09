@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SearchbarComponent } from './components/search-bar/search-bar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ResultsComponent } from './components/results/results.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +13,8 @@ import { DomainService } from './services/domain.service';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { SearchResultsComponent } from './components/search-results/search-results.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { EffectsModule } from '@ngrx/effects';
     HomeComponent,
     SearchbarComponent,
     HeaderComponent,
-    ResultsComponent
+    ResultsComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,
