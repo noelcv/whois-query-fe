@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { SearchResultsComponent } from './components/search-results/search-results.component';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SearchResultsComponent } from './components/search-results/search-resul
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [HttpClientModule, DomainService],
   bootstrap: [AppComponent]
