@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store'
 import { IQuery } from 'src/app/types/domainQuery.interface';
+import { IDomainResult } from 'src/app/types/domainResult.interface';
 
 export enum EDomainActions {
   GetDomainResult = '[Domain] Get Domain Result',
@@ -8,7 +9,7 @@ export enum EDomainActions {
 
 export class GetDomainResult implements Action {
   public readonly type = EDomainActions.GetDomainResult;
-  constructor(public payload: IQuery) {}
+  constructor(public payload: IDomainResult) {}
 }
 
-export type DomainAction = GetDomainResult;
+export type DomainActions = GetDomainResult;
