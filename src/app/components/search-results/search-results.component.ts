@@ -13,14 +13,12 @@ import { IQuery } from 'src/app/types/domainQuery.interface';
 })
 export class SearchResultsComponent implements OnInit {
   @Input()
-  domainResult$ = this._store.pipe(select(selectedDomain)).subscribe()
-
+  domainResult$ = this._store.pipe(select(selectedDomain)).subscribe((data) => {return data})
   constructor(private _store: Store<IAppState>) { }
 
   ngOnInit(): void {
   //TODO: add logic to listen for changes in store
   this._store.dispatch(new GetDomainResult())
-  this._store.pipe(select(selectedDomain))
   console.log(this.domainResult$, 'this domainResult$ inside search-results component')
   }
 

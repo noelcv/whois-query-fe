@@ -3,8 +3,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GetDomainQuery, GetDomainResult } from 'src/app/store/actions/domain.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { DomainService } from '../../services/domain.service';
-import { Store } from '@ngrx/store'
+import { select, Store } from '@ngrx/store'
 import { IQuery } from 'src/app/types/domainQuery.interface';
+import { selectedDomain } from 'src/app/store/selectors/domain.selectors';
 
 @Component({
   selector: 'app-search-bar',
@@ -12,7 +13,7 @@ import { IQuery } from 'src/app/types/domainQuery.interface';
   styleUrls: ['./search-bar.component.css'],
 })
 export class SearchbarComponent implements OnInit {
-  result: any;
+  domainResult$ = this._store.pipe(select(selectedDomain))
   selectedTld = 'com';
   domainQueryForm: FormGroup = this.formBuilder.group({
     sldInput: ['', Validators.minLength(1)],
