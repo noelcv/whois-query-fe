@@ -4,12 +4,18 @@ import { IDomainResult } from 'src/app/types/domainResult.interface';
 
 export enum EDomainActions {
   GetDomainResult = '[Domain] Get Domain Result',
+  GetDomainQuery = '[Query Domain] Get Domain Query'
   //TODO: add further actions ex. GetDomainResultSuccess, GetDomainResultError
 }
 
 export class GetDomainResult implements Action {
   public readonly type = EDomainActions.GetDomainResult;
-  constructor(public payload: IDomainResult) {}
 }
 
-export type DomainActions = GetDomainResult;
+export class GetDomainQuery implements Action {
+  public readonly type = EDomainActions.GetDomainQuery;
+  constructor(public payload: IQuery) {}
+}
+
+
+export type DomainActions = GetDomainResult | GetDomainQuery;

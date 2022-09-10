@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { GetDomainResult } from 'src/app/store/actions/domain.actions';
+import { GetDomainQuery, GetDomainResult } from 'src/app/store/actions/domain.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { DomainService } from '../../services/domain.service';
 import { Store } from '@ngrx/store'
+import { IQuery } from 'src/app/types/domainQuery.interface';
 
 @Component({
   selector: 'app-search-bar',
@@ -21,7 +22,7 @@ export class SearchbarComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private _store: Store<IAppState>,
-    private domainService: DomainService) {}
+  ) {}
 
   ngOnInit(): void {
     this.domainQueryForm.valueChanges.subscribe((form) => {
@@ -31,21 +32,15 @@ export class SearchbarComponent implements OnInit {
 
   submitHandler() {
     try {
-      const payload = {
-        sld: this.domainQueryForm.value.sldInput as string,
-        tld: this.domainQueryForm.value.tldInput as string,
-        domain: this.domainQueryForm.value.sldInput + '.' + this.domainQueryForm.value.tldInput as string,
-        type: 'domain',
-        payload: {
-          sld: this.domainQueryForm.value.sldInput as string,
-          tld: this.domainQueryForm.value.tldInput as string,
-        }
+      const payload: IQuery = {
+        sld: this.domainQueryForm.value.sldInput,
+        tld: this.domainQueryForm.value.tldInput,
       };
 
       //NgRx approach
       //TODO: create new action type QueryDomain to be dispatched
       //instead of GetDomainResult
-      this._store.dispatch(new GetDomainResult(payload));
+      this._store.dispatch(new GetDomainQuery(payload));
 
 
       // data binding approach

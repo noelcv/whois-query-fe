@@ -10,10 +10,10 @@ export const domainReducers = (
     case EDomainActions.GetDomainResult: {
       return {
         ...state,
-        domainResult: action.payload,
       }
     }
     default:
       return state;
   }
 }
+

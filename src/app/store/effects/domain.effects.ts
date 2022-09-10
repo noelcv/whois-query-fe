@@ -12,12 +12,12 @@ import { selectedDomain } from '../selectors/domain.selectors';
 
 @Injectable()
 export class DomainEffects {
-
-  getDomain$ = createEffect(() => this._actions$.pipe(
-    ofType<GetDomainResult>(EDomainActions.GetDomainResult),
-    switchMap((action) => this._domainService.queryDomain(action.payload)),
-    switchMap((queryHttp: IDomainResult) => of(new GetDomainResult(queryHttp)))
-  ))
+  //TODO: replace logic here to grab after QueryEffects
+  // getDomain$ = createEffect(() => this._actions$.pipe(
+  //   ofType<GetDomainResult>(EDomainActions.GetDomainResult),
+  //   switchMap((action) => this._domainService.queryDomain(action.payload)),
+  //   switchMap((queryHttp: IDomainResult) => of(new GetDomainResult(queryHttp)))
+  // ))
 
   // getDomain$ = createEffect(() => {
   //   return this._actions$.pipe(

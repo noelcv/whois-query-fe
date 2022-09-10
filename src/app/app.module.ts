@@ -18,6 +18,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { appReducers } from './store/reducers/app.reducer';
 import { DomainEffects } from './store/effects/domain.effects';
+import { QueryEffects } from './store/effects/query.effects';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { DomainEffects } from './store/effects/domain.effects';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([DomainEffects]),
+    EffectsModule.forRoot([QueryEffects, DomainEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router'}),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
