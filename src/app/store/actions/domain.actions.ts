@@ -10,6 +10,7 @@ export enum EDomainActions {
 
 export class GetDomainResult implements Action {
   public readonly type = EDomainActions.GetDomainResult;
+  constructor(public payload: IDomainResult) {}
 }
 
 export class GetDomainQuery implements Action {

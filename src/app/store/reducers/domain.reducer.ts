@@ -9,7 +9,7 @@ export const domainReducers = (
   switch (action.type) {
     case EDomainActions.GetDomainResult: {
       return {
-        ...state,
+        ...state, domainResult: action.payload
       }
     }
     default:

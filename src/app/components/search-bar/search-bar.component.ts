@@ -13,7 +13,7 @@ import { selectedDomain } from 'src/app/store/selectors/domain.selectors';
   styleUrls: ['./search-bar.component.css'],
 })
 export class SearchbarComponent implements OnInit {
-  domainResult$ = this._store.pipe(select(selectedDomain))
+  domainResult = this._store.pipe(select(selectedDomain)).subscribe()
   selectedTld = 'com';
   domainQueryForm: FormGroup = this.formBuilder.group({
     sldInput: ['', Validators.minLength(1)],
@@ -23,6 +23,7 @@ export class SearchbarComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private _store: Store<IAppState>,
+    private service: DomainService
   ) {}
 
   ngOnInit(): void {
