@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { GetDomainResult } from 'src/app/store/actions/domain.actions';
+import { IAppState } from 'src/app/store/states/app.state';
 import { DomainService } from '../../services/domain.service';
+import { Store } from '@ngrx/store'
 
 @Component({
   selector: 'app-search-bar',
@@ -15,7 +18,10 @@ export class SearchbarComponent implements OnInit {
     tldInput: [this.selectedTld, Validators.minLength(1)],
   });
 
-  constructor(private formBuilder: FormBuilder, private domainService: DomainService) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private _store: Store<IAppState>,
+    private domainService: DomainService) {}
 
   ngOnInit(): void {
     this.domainQueryForm.valueChanges.subscribe((form) => {
@@ -26,14 +32,25 @@ export class SearchbarComponent implements OnInit {
   submitHandler() {
     try {
       const payload = {
-        sld: this.domainQueryForm.value.sldInput,
-        tld: this.domainQueryForm.value.tldInput,
+        sld: this.domainQueryForm.value.sldInput as string,
+        tld: this.domainQueryForm.value.tldInput as string,
+        domain: this.domainQueryForm.value.sldInput + '.' + this.domainQueryForm.value.tldInput as string,
+        type: 'domain',
+        payload: {
+          sld: this.domainQueryForm.value.sldInput as string,
+          tld: this.domainQueryForm.value.tldInput as string,
+        }
       };
 
-      this.result = this.domainService.queryDomain(payload).subscribe();
+      //NgRx approach
+      //TODO: create new action type QueryDomain to be dispatched
+      //instead of GetDomainResult
+      this._store.dispatch(new GetDomainResult(payload));
 
-      console.log(this.result, 'this.result');
-      console.log(this.result, 'this.result.body')
+
+      // data binding approach
+      // this.result = this.domainService.queryDomain(payload).subscribe();
+
 
     } catch (err) {
       console.log('❌ Error submitting query: ', err);

@@ -16,6 +16,7 @@ export class DomainService {
   constructor(private http: HttpClient) {}
 
   public queryDomain(query: IQuery): Observable<IDomainResult> {
+    console.log(query, 'query in service')
     const response = this.http
       .get(this.BASE_URL, { params: { sld: query.sld, tld: query.tld } })
       .pipe(

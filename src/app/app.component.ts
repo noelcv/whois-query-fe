@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store'
+import { GetDomainResult } from './store/actions/domain.actions';
+import { IAppState } from './store/states/app.state';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'whois-query-fe';
+
+  domainResult$ = this._store.pipe(select('domain'))
+
+  constructor(private _store: Store<IAppState>) {}
+
+  ngOnInit() {
+  
+  }
+
 }
