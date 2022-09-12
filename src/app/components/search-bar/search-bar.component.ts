@@ -41,10 +41,11 @@ export class SearchbarComponent implements OnInit {
       this._store.dispatch(new GetDomainQuery(payload));
       this._store.dispatch(new DisplayResults(true))
 
+      this.domainQueryForm.controls['sldInput'].reset();
 
     } catch (err) {
       console.log('❌ Error submitting query: ', err);
     }
-    this.domainQueryForm.reset();
+
   }
 }
