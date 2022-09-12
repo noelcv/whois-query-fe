@@ -23,5 +23,4 @@ const checkWatchList = (state: IAppState) => state.watchList;
 export const selectedWatchList = createSelector(
   checkWatchList,
   (state: IWatchListState) => state.myWatchList
-  
 )

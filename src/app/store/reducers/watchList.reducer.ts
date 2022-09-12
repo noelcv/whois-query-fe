@@ -9,8 +9,11 @@ export const watchListReducers = (
 ): IWatchListState => {
   switch (action.type) {
     case EDomainActions.AddDomainToWatchList: {
+      state = {
+        myWatchList: [...state.myWatchList, action.payload]}
+    
       return {
-        ...state, ...action.payload
+        ...state
       }
     }
     default:

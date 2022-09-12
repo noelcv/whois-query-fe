@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
+import { AddDomainToWatchList } from 'src/app/store/actions/domain.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { domainMapper } from 'src/app/utils/domainMapper';
 
@@ -18,6 +19,7 @@ export class SearchResultsComponent implements OnInit {
     let payload: string = domainResult$.actionsObserver._value.payload
     const objectToStore = domainMapper(payload)
     console.log(objectToStore)
+    this._store.dispatch( new AddDomainToWatchList(objectToStore))
   }
 
   constructor(private _store: Store<IAppState>) { }
