@@ -11,6 +11,7 @@ import { IAppState } from 'src/app/store/states/app.state';
 export class SearchResultsComponent implements OnInit {
   @Input()
   domainResult$ = this._store.pipe(select('domain'))
+  displayUI$ = this._store.pipe(select('display'))
 
   constructor(private _store: Store<IAppState>) { }
 

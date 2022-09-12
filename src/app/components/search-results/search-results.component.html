@@ -1,4 +1,9 @@
-<div class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 -my-12 mx-auto h-2/4">
+
+<ng-template [ngIf]="(displayUI$ | async)?.show === true">
+<div class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 -my-12 mx-auto max-h-fit">
   <div class="flex flex-col my-5 flex-start text-zinc-100">
     <h2>Results</h2>
     <p>{{ (domainResult$ | async)?.domainResult }}</p>
+  </div>
+</div>
+<!-- </ng-template> -->
