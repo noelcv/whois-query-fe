@@ -1,9 +1,9 @@
-import { IDomainResult } from "src/app/types/domainResult.interface"
+import { IParsedDomain } from "src/app/types/parsedDomain.interface"
 
 export interface IWatchListState {
-  myWatchList: IDomainResult[]
+  myWatchList: IParsedDomain[]
 }
 
-export const initialQueryState: IWatchListState = {
+export const initialWatchListState: IWatchListState = {
   myWatchList: []
 }

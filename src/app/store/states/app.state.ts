@@ -2,12 +2,14 @@ import { RouterReducerState } from "@ngrx/router-store";
 import { IQueryState, initialQueryState } from "./query.state";
 import { IDomainState, initialDomainState } from "./domain.state";
 import { IResultsUiState, initialResultsUiState } from "./resultsUi.state";
+import { initialWatchListState, IWatchListState } from "./watchList.state";
 
 export interface IAppState {
   router?: RouterReducerState;
   query: IQueryState;
   domain: IDomainState;
   display: IResultsUiState;
+  watchList: IWatchListState
 }
 /*this is the equivalent of the store in RTK -
 *we register the different state for the different slices,
@@ -17,7 +19,8 @@ export interface IAppState {
 export const initialAppState: IAppState = {
   domain: initialDomainState,
   query: initialQueryState,
-  display: initialResultsUiState
+  display: initialResultsUiState,
+  watchList: initialWatchListState
 }
 
 export function getInitialState(): IAppState {
