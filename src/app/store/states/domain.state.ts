@@ -3,6 +3,7 @@ import { IDomainResult } from "src/app/types/domainResult.interface";
 
 
 export interface IDomainState {
+  [x: string]: any;
   domainResult: IDomainResult;
 }
 
