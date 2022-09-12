@@ -3,7 +3,7 @@ import { IQuery } from 'src/app/types/domainQuery.interface';
 import { IDomainResult } from 'src/app/types/domainResult.interface';
 
 export enum EDomainActions {
-  GetDomainResult = '[Domain] Get Domain Result',
+  GetDomainResult = '[Result Domain] Get Domain Result',
   GetDomainQuery = '[Query Domain] Get Domain Query'
   //TODO: add further actions ex. GetDomainResultSuccess, GetDomainResultError
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ofType, Actions, createEffect } from '@ngrx/effects';
+import { ofType, Actions, createEffect, Effect } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { GetDomainResult, EDomainActions, GetDomainQuery } from '../actions/domain.actions';

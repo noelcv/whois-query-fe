@@ -1,3 +1,3 @@
 export interface IDomainResult {
-  domain?: string;
+  result?: string;
 }

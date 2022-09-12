@@ -16,13 +16,13 @@ export class DomainService {
   constructor(private http: HttpClient) {}
 
   public queryDomain(query: IQuery): Observable<IDomainResult> {
-    console.log(query, 'query in service')
+    console.log(query, 'query in service');
     const response = this.http
-      .get(this.BASE_URL, { params: { sld: query.sld, tld: query.tld } })
+      .get(this.BASE_URL, { params: { sld: query.sld, tld: query.tld }, responseType: 'json' })
       .pipe(
         map((data) => {
-          console.log("beautiful data", data)
-          return data as IDomainResult})
+          console.log('beautiful data', data);
+          return data})
       );
 
     return response;

@@ -1,5 +1,26 @@
 # WhoisQueryFe
 
+
+
+
+
+
+## Security
+
+### Client-side input sanitization
+
+Combined with a server-side validation strategy with client-side filtering to provide imediate feedback to the client
+
+#### Credential and Personally Identifiable Information (PII)
+To prevent caching of user inputs we set the assignable attributes
+to override default configuration.
+```
+    <input formControlName="sldInput" class="w-3/4 h-20 text-xl p-10" type="text" placeholder="Enter a domain name" type="text" min-length="1" maxlength="63" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">>
+```
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 
 ## Development server

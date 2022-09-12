@@ -1,15 +1,11 @@
 <div class="mx-auto my-52 bg-zinc-500 w-2/4 h-20 shadow-xl">
   <form [formGroup]="domainQueryForm" (ngSubmit)="submitHandler()" class="flex flex-row">
-    <input formControlName="sldInput" class="w-3/4 h-20 text-xl p-10" type="text" placeholder="Enter a domain name" min-length="1" maxlength="63">
-    <select formControlName="tldInput" class="text-3xl">
+    <input formControlName="sldInput" class="w-3/4 h-20 text-xl p-10 text-zinc-800" type="text" placeholder="Enter a domain name" type="text" min-length="1" maxlength="63" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">
+    <select formControlName="tldInput" class="text-3xl bg-zinc-200">
       <option value="com">.com</option>
       <option value="net">.net</option>
     </select>
     <button type="submit" class="w-1/4 h-20 bg-teal-600 text-xl text-white font-extralight active:bg-teal-800 active:font-semibold">Search</button>
   </form>
 </div>
-
-<div>{{domainResult}}</div>
-<app-search-results
-
-></app-search-results>
+<app-search-results></app-search-results>

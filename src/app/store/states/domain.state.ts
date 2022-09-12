@@ -8,6 +8,6 @@ export interface IDomainState {
 
 export const initialDomainState: IDomainState = {
   domainResult: {
-    domain: "",
+    result: "",
   }
 }
