@@ -10,7 +10,7 @@ export const ResultsUiReducers = (
     case EDomainActions.DisplayResults: {
       (() => {setTimeout(() => {}, 2500)})
       return {
-        show: !state.show
+        show: action.payload
       }
     }
     default:

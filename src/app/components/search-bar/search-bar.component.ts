@@ -20,6 +20,11 @@ export class SearchbarComponent implements OnInit {
     tldInput: [this.selectedTld, Validators.minLength(1)],
   });
 
+  onKey(event: KeyboardEvent) {
+    if (event)
+    this._store.dispatch(new DisplayResults(false))
+  }
+
   constructor(
     private formBuilder: FormBuilder,
     private _store: Store<IAppState>,
@@ -29,6 +34,7 @@ export class SearchbarComponent implements OnInit {
     this.domainQueryForm.valueChanges.subscribe((form) => {
       console.log(form);
     });
+
   }
 
   submitHandler() {
