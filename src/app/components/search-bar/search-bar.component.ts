@@ -42,6 +42,6 @@ export class SearchbarComponent implements OnInit {
     } catch (err) {
       console.log('❌ Error submitting query: ', err);
     }
-    // this.domainQueryForm.reset();
+    this.domainQueryForm.reset();
   }
 }
