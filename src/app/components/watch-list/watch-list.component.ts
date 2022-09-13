@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
 import { Observable, of } from 'rxjs';
-import { GetWatchList } from 'src/app/store/actions/domain.actions';
+import { DisplayResults, GetWatchList } from 'src/app/store/actions/domain.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { IWatchListState } from 'src/app/store/states/watchList.state';
 import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
@@ -16,7 +16,12 @@ export class WatchListComponent implements OnInit {
   
   @Input()
   watchList$ = this._store.pipe(select('watchList'))
-  xpto: IParsedDomain[] = []
+  watchListUi: IParsedDomain[] = []
+  
+  watchListHandler() {
+    this._store.dispatch( new DisplayResults(false))
+    //TODO: dispatch action to render favorite domain
+  }
   
   constructor(private _store: Store<IAppState>) { }
 
@@ -24,8 +29,8 @@ export class WatchListComponent implements OnInit {
     this._store.pipe(select('watchList')).subscribe( data => {
       console.log(data, 'data inside watch pipe on init')
       console.log(data.myWatchList, 'data inside myWatchList pipe on init')
-      this.xpto = data.myWatchList
-      console.log('this.xpto', this.xpto)
+      this.watchListUi = data.myWatchList
+      console.log('this.xpto', this.watchListUi)
       }
     )
   }

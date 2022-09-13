@@ -14,7 +14,6 @@ export class SearchResultsComponent implements OnInit {
   @Input()
   domainResult$ = this._store.pipe(select('domain'))
   displayUI$ = this._store.pipe(select('display'))
-  watchList$ = this._store.pipe(select('watchList'))
 
   addToWatchlist(domainResult$: any) {
     let payload: string = domainResult$.actionsObserver._value.payload
