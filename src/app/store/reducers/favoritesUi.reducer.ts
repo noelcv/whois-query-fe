@@ -1,13 +1,12 @@
-import { EDomainActions } from '../actions/domain.actions';
-import { DomainActions } from '../actions/domain.actions';
+import { EUiActions, UiActions } from '../actions/ui.actions';
 import { IFavoritesUiState, initialFavoritesUiState } from '../states/favoritesUi.state';
 
 export const FavoritesUiReducers = (
   state = initialFavoritesUiState,
-  action: DomainActions
+  action: UiActions
 ): IFavoritesUiState => {
   switch (action.type) {
-    case EDomainActions.DisplayFavorites: {
+    case EUiActions.DisplayFavorites: {
       (() => {setTimeout(() => {}, 2500)})
       return {
         showFavorite: action.payload

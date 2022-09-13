@@ -2,7 +2,7 @@
 
 ## State Management
 
-To make the app truly reactive and ready to scale, we opted to manage state with NgRx and recreate Redux Patterns.
+To make the app truly reactive and ready to be manageable at scale, we opted to manage state with NgRx and recreate Redux Patterns to establish a single source of truth to manage the interactions on the client-side.
 
 ---- STORE
 |___ state
@@ -12,10 +12,12 @@ To make the app truly reactive and ready to scale, we opted to manage state with
 |___ selectors
 
 
+## Modularity and Composibility 
+We procured to keep the code modular, the functions pure and keep side effects to the bare minimum. Example given, instead of chaining multiple actions within an effect,
+we opted to draft highly targeted actions with a tight scope of execution, actionable and dispatchable from the UI.
 
-
-
-
+## Tailwind
+For styling our UI, we opted for TailwindCSS, not only for allowing for fast prototyping, but also for the optimized CSS builds, which are significantly smaller than regular CSS.
 
 ## Security
 
@@ -24,14 +26,11 @@ To make the app truly reactive and ready to scale, we opted to manage state with
 Combined with a server-side validation strategy with client-side filtering to provide imediate feedback to the client
 
 #### Credential and Personally Identifiable Information (PII)
-To prevent caching of user inputs we set the assignable attributes
-to override default configuration.
+
+Although we are not dealing with highly sensitive information (such as passwords, credit card details, etc), we procured to prevent browser caching of user inputs we set with assignable attributes to override default configuration.
 ```
     <input formControlName="sldInput" class="w-3/4 h-20 text-xl p-10" type="text" placeholder="Enter a domain name" type="text" min-length="1" maxlength="63" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">>
 ```
-
-
-
 
 ## Deployment
 
