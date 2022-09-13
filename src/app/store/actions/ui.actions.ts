@@ -6,7 +6,8 @@ import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
 export enum EUiActions {
   DisplayResults = '[Display Results] Show Result State',
   DisplayFavorites = '[Display Favorites] Show Favorites State',
-  DisplaySelectedFavorite = '[Display Selected Favorite] Show Selected Favorite State'
+  DisplaySelectedFavorite = '[Display Selected Favorite] Show Selected Favorite State',
+  DisplayFeedback = '[Display Feedback] Show Feedback State',
 }
 
 //UI ACTIONS
@@ -25,5 +26,10 @@ export class DisplaySelectedFavorite implements Action {
   constructor(public payload: boolean) {}
 }
 
+export class DisplayFeedback implements Action {
+  public readonly type = EUiActions.DisplayFeedback;
+  constructor(public payload: boolean) {}
+}
 
-export type UiActions = DisplayResults | DisplayFavorites | DisplaySelectedFavorite;
+
+export type UiActions = DisplayResults | DisplayFavorites | DisplaySelectedFavorite | DisplayFeedback;

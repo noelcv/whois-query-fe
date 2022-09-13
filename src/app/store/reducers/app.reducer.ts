@@ -6,6 +6,7 @@ import { queryReducers } from "./query.reducer";
 import { ResultsUiReducers } from "./resultsUi.reducer";
 import { watchListReducers } from "./watchList.reducer";
 import { FavoritesUiReducers } from "./favoritesUi.reducer";
+import { FeedbackUiReducers } from "./feedbackUi.reducer";
 
 //match the reducers with the app state
 export const appReducers: ActionReducerMap<IAppState, any> = {
@@ -14,6 +15,7 @@ export const appReducers: ActionReducerMap<IAppState, any> = {
   query: queryReducers,
   display: ResultsUiReducers,
   displayFavorites: FavoritesUiReducers,
-  watchList: watchListReducers
+  watchList: watchListReducers,
+  feedback: FeedbackUiReducers
 };
 

@@ -12,6 +12,7 @@ import { domainMapper } from 'src/app/utils/domainMapper';
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css']
 })
+
 export class SearchResultsComponent implements OnInit {
   @Input()
   domainResult$ = this._store.pipe(select('domain'))
@@ -28,14 +29,12 @@ export class SearchResultsComponent implements OnInit {
   addToWatchList(domainResult$: any) {
     let payload: string = domainResult$.actionsObserver._value.payload
     const objectToStore = domainMapper(payload)
-    console.log(objectToStore)
     this._store.dispatch( new AddDomainToWatchList(objectToStore))
     this._store.dispatch( new GetWatchList())
   }
 
   removeFromWatchList(selectedDomain: IParsedDomain | undefined) {
     if (selectedDomain) {
-      console.log(selectedDomain, 'selected domain inside remove from watchlist')
       this._store.dispatch(new RemoveFromWatchList(selectedDomain))
       this._store.dispatch(new DisplayFavorites(false))
     }

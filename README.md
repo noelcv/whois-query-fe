@@ -4,12 +4,9 @@
 - JWT
 - Same-site policy
 - Headers at Get Request
-- Enforce client-side validation and feedback
 - ErrorBoundary
 - Test suite
 - Deployment
-- Finish displaying logic for displaying parsed favorites
-- removeFromWatchList action logic
 
 ## State Management
 

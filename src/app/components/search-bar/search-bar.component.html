@@ -7,6 +7,8 @@
     </select>
     <button [disabled]="!domainQueryForm.valid" type="submit" class="w-1/4 min-w-fit h-20 bg-teal-600 text-xl text-white font-extralight active:bg-teal-800 active:font-semibold">Search</button>
   </form>
-  <p class="" *ngIf="domainQueryForm.invalid" class='text-red-900 text-xs pl-2 pt-1 italic'  id="alert-input">Your input is {{ domainQueryForm.status }}</p>
-  <p class="" *ngIf="domainQueryForm.valid" class='text-teal-700 text-xs pl-2 pt-1 italic'  id="alert-input">Your input is {{ domainQueryForm.status }}</p>
+  <ng-template [ngIf]="(feedbackUi$ | async)?.display === true">
+    <p class="" *ngIf="domainQueryForm.invalid" class='text-red-900 text-xs pl-2 pt-1 italic'  id="alert-input">Your input is {{ domainQueryForm.status }}</p>
+    <p class="" *ngIf="domainQueryForm.valid" class='text-teal-700 text-xs pl-2 pt-1 italic'  id="alert-input">Your input is {{ domainQueryForm.status }}</p>
+  </ng-template>
 </div>
