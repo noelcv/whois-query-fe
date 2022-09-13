@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
-import { AddDomainToWatchList, DisplayFavorites, GetWatchList } from 'src/app/store/actions/domain.actions';
+import { AddDomainToWatchList, GetWatchList } from 'src/app/store/actions/domain.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { domainMapper } from 'src/app/utils/domainMapper';
-
 
 @Component({
   selector: 'app-search-results',
@@ -14,6 +13,7 @@ export class SearchResultsComponent implements OnInit {
   @Input()
   domainResult$ = this._store.pipe(select('domain'))
   displayUI$ = this._store.pipe(select('display'))
+  displayFavorites$ = this._store.pipe(select('displayFavorites'));
 
   addToWatchlist(domainResult$: any) {
     let payload: string = domainResult$.actionsObserver._value.payload

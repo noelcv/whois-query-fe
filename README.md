@@ -1,5 +1,17 @@
 # WhoisQueryFe
 
+## State Management
+
+To make the app truly reactive and ready to scale, we opted to manage state with NgRx and recreate Redux Patterns.
+
+---- STORE
+|___ state
+|___ actions
+|___ reducers
+|___ effects
+|___ selectors
+
+
 
 
 
@@ -19,6 +31,12 @@ to override default configuration.
 ```
 
 
+
+
+## Deployment
+
+Backend - Heroku
+Front-End - Vercel - https://vercel.com/guides/deploying-angular-with-vercel
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
