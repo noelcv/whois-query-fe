@@ -3,12 +3,14 @@ import { IQueryState, initialQueryState } from "./query.state";
 import { IDomainState, initialDomainState } from "./domain.state";
 import { IResultsUiState, initialResultsUiState } from "./resultsUi.state";
 import { initialWatchListState, IWatchListState } from "./watchList.state";
+import { IFavoritesUiState, initialFavoritesUiState } from "./favoritesUi.state";
 
 export interface IAppState {
   router?: RouterReducerState;
   query: IQueryState;
   domain: IDomainState;
   display: IResultsUiState;
+  displayFavorites: IFavoritesUiState;
   watchList: IWatchListState
 }
 /*this is the equivalent of the store in RTK -
@@ -20,6 +22,7 @@ export const initialAppState: IAppState = {
   domain: initialDomainState,
   query: initialQueryState,
   display: initialResultsUiState,
+  displayFavorites: initialFavoritesUiState,
   watchList: initialWatchListState
 }
 
