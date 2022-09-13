@@ -13,7 +13,7 @@ import { v4 as uuid } from 'uuid';
   let domainName = cleanResponse[0].split(/:/).map(element => element.trim())[1]
   let registrarId = cleanResponse[1].split(/:/).map(element => element.trim())[1]
   let registrarWhoisServer = cleanResponse[2].split(/:/).map(element => element.trim())[1]
-  //TODO: refine logic let registrarUrl = cleanResponse[3].split(/:/).map(element => element.trim())[1]
+  let registrarUrl = `https://${cleanResponse[3].split(/:/).map(element => element.trim())[2].slice(2,)}`
   let creationDate = cleanResponse[5].split(/:/).map(element => element.trim())[1].slice(0,10)
   let expirationDate = cleanResponse[6].split(/:/).map(element => element.trim())[1].slice(0,10)
   let registrarName = cleanResponse[7].split(/:/).map(element => element.trim())[1]
@@ -25,6 +25,7 @@ import { v4 as uuid } from 'uuid';
     domainName,
     registrarId,
     registrarName,
+    registrarUrl,
     registrarWhoisServer,
     expirationDate,
     creationDate,

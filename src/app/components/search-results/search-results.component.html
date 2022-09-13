@@ -28,7 +28,7 @@
   >
     <div class="flex flex-col my-5 flex-start text-zinc-100">
       <div class="flex flex-row justify-between align-middle">
-        <h2>{{ selectedDomain?.domainName }}</h2>
+        <a class="text-teal-200 underline pt-2" href="http://{{ selectedDomain?.domainName }}" target="_blank"><h2>{{ selectedDomain?.domainName }}</h2></a>
         <!-- TODO: Replace for removeFromWatchList -->
         <button
           (click)="addToWatchList(selectedDomain)"
@@ -45,6 +45,10 @@
         <div class="flex flex-col">
           <p class="text-lg font-bold">Registrar Name:</p>
           <p class="text-md font-normal">{{ selectedDomain?.registrarName }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Registrar URL:</p>
+          <a href="{{ selectedDomain?.registrarUrl }}" target="_blank" class="text-md font-normal text-teal-200 underline">{{ selectedDomain?.registrarUrl }}</a>
         </div>
         <div class="flex flex-col">
           <p class="text-lg font-bold">Registrar WhoisServer:</p>
