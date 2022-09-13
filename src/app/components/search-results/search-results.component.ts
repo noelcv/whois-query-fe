@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
-import { AddDomainToWatchList, GetWatchList } from 'src/app/store/actions/watchlist.actions';
+import { DisplayFavorites, DisplayResults } from 'src/app/store/actions/ui.actions';
+import { AddDomainToWatchList, GetWatchList, RemoveFromWatchList } from 'src/app/store/actions/watchlist.actions';
 import { IAppState } from 'src/app/store/states/app.state';
+import { IDomainResult } from 'src/app/types/domainResult.interface';
 import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
 import { domainMapper } from 'src/app/utils/domainMapper';
 
@@ -29,6 +31,14 @@ export class SearchResultsComponent implements OnInit {
     console.log(objectToStore)
     this._store.dispatch( new AddDomainToWatchList(objectToStore))
     this._store.dispatch( new GetWatchList())
+  }
+  
+  removeFromWatchList(selectedDomain: IParsedDomain | undefined) {
+    if (selectedDomain) {
+      console.log(selectedDomain, 'selected domain inside remove from watchlist')
+      this._store.dispatch(new RemoveFromWatchList(selectedDomain))
+      this._store.dispatch(new DisplayFavorites(false))
+    }
   }
 
   constructor(private _store: Store<IAppState>) { }
