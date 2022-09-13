@@ -10,10 +10,10 @@ export const selectedUiResult = createSelector(
   (state: IResultsUiState) => state.show
 );
 
-
-const checkUiFavorite = (state: IAppState) => state.displayFavorites;
+const checkUiWatchList = (state: IAppState) => state.displayFavorites;
 
 export const selectedUiFavorite = createSelector(
-  checkUiFavorite,
+  checkUiWatchList,
   (state: IFavoritesUiState) => state.showFavorite
 );
+

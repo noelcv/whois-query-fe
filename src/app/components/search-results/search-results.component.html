@@ -1,29 +1,74 @@
-
 <ng-template [ngIf]="(displayUI$ | async)?.show === true">
-<div class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto max-h-fit">
-  <div class="flex flex-col my-5 flex-start text-zinc-100">
-    <div class="flex flex-row justify-between align-middle">
-      <h2>Results</h2>
-      <button (click)="addToWatchlist(domainResult$)" class="w-1/4 h-20 bg-teal-600 text-md text-white font-extralight active:bg-teal-800 active:font-semibold">Add to WatchList</button>
-    </div>
-    <div class="max-w-prose text-md leading-8" [innerText]="(domainResult$ | async)?.domainResult">
-      {{(domainResult$ | async)?.domainResult}}
+  <div
+    class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto max-h-fit"
+  >
+    <div class="flex flex-col my-5 flex-start text-zinc-100">
+      <div class="flex flex-row justify-between align-middle">
+        <h2>Results</h2>
+        <button
+          (click)="addToWatchList(domainResult$)"
+          class="w-1/4 h-20 bg-teal-600 text-md text-white font-extralight active:bg-teal-800 active:font-semibold"
+        >
+          Add to WatchList
+        </button>
+      </div>
+      <div
+        class="max-w-prose text-md leading-8"
+        [innerText]="(domainResult$ | async)?.domainResult"
+      >
+        {{ (domainResult$ | async)?.domainResult }}
+      </div>
     </div>
   </div>
-</div>
 </ng-template>
 
 <ng-template [ngIf]="(displayFavorites$ | async)?.showFavorite === true">
-  <div class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto max-h-fit">
+  <div
+    class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto max-h-fit"
+  >
     <div class="flex flex-col my-5 flex-start text-zinc-100">
       <div class="flex flex-row justify-between align-middle">
-        <h2>Favorites</h2>
+        <h2>{{ selectedDomain?.domainName }}</h2>
         <!-- TODO: Replace for removeFromWatchList -->
-        <button (click)="addToWatchlist(domainResult$)" class="w-1/4 h-20 bg-rose-800 text-md text-white font-extralight active:bg-teal-800 active:font-semibold">Remove From WatchList</button>
+        <button
+          (click)="addToWatchList(selectedDomain)"
+          class="w-1/4 h-20 bg-rose-800 text-md text-white font-extralight active:bg-teal-800 active:font-semibold"
+        >
+          Remove From WatchList
+        </button>
       </div>
-      <div class="max-w-prose text-md leading-8" [innerText]="(domainResult$ | async)?.domainResult">
-        {{(domainResult$ | async)?.domainResult}}
+      <div class="max-w-prose text-md leading-8">
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Registrar Id:</p>
+          <p class="text-md font-normal">{{ selectedDomain?.registrarId }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Registrar Name:</p>
+          <p class="text-md font-normal">{{ selectedDomain?.registrarName }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Registrar WhoisServer:</p>
+          <p class="text-md font-normal">{{ selectedDomain?.registrarWhoisServer }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Expiration Date:</p>
+          <p class="text-md font-normal">{{ selectedDomain?.expirationDate }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Creation Date:</p>
+          <p class="text-md font-normal">{{ selectedDomain?.creationDate }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Registrar IANA ID:</p>
+          <p class="text-md font-normal">{{ selectedDomain?.registrarIanaId }}</p>
+        </div>
+        <div class="flex flex-col">
+          <p class="text-lg font-bold">Raw Whois Response:</p>
+          <p class="max-w-prose text-md leading-8">{{ selectedDomain?.rawResponse }}</p>
+        </div>
+        
+        
       </div>
     </div>
   </div>
-  </ng-template>
+</ng-template>

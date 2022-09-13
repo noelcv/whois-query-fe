@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
 import { AddDomainToWatchList, GetWatchList } from 'src/app/store/actions/watchlist.actions';
 import { IAppState } from 'src/app/store/states/app.state';
+import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
 import { domainMapper } from 'src/app/utils/domainMapper';
 
 @Component({
@@ -14,8 +15,15 @@ export class SearchResultsComponent implements OnInit {
   domainResult$ = this._store.pipe(select('domain'))
   displayUI$ = this._store.pipe(select('display'))
   displayFavorites$ = this._store.pipe(select('displayFavorites'));
+  
+  selectedDomain: IParsedDomain | undefined = undefined
+  selectedFavorite$ = this._store.pipe(select('watchList')).subscribe( domain => {
+    if (domain.selectedFavorite) {
+    this.selectedDomain = domain.selectedFavorite}
+  })
+  
 
-  addToWatchlist(domainResult$: any) {
+  addToWatchList(domainResult$: any) {
     let payload: string = domainResult$.actionsObserver._value.payload
     const objectToStore = domainMapper(payload)
     console.log(objectToStore)

@@ -11,7 +11,7 @@ export interface IAppState {
   domain: IDomainState;
   display: IResultsUiState;
   displayFavorites: IFavoritesUiState;
-  watchList: IWatchListState
+  watchList: IWatchListState;
 }
 /*this is the equivalent to the store in RTK -
 *we register the different state for the different slices,
@@ -23,7 +23,7 @@ export const initialAppState: IAppState = {
   query: initialQueryState,
   display: initialResultsUiState,
   displayFavorites: initialFavoritesUiState,
-  watchList: initialWatchListState
+  watchList: initialWatchListState,
 }
 
 export function getInitialState(): IAppState {
