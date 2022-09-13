@@ -1,15 +1,15 @@
 import { EDomainActions } from "../actions/domain.actions";
-import { DomainActions } from "../actions/domain.actions";
+import { EWatchListActions, WatchListActions } from "../actions/watchlist.actions";
 import { initialWatchListState, IWatchListState } from "../states/watchList.state";
 
 //TODO: test action
 export const watchListReducers = (
   state = initialWatchListState,
-  action: DomainActions
+  action: WatchListActions
 ): IWatchListState => {
   switch (action.type) {
     
-    case EDomainActions.AddDomainToWatchList: {
+    case EWatchListActions.AddDomainToWatchList: {
       state = {
         myWatchList: [...state.myWatchList, action.payload]}
     
@@ -19,7 +19,7 @@ export const watchListReducers = (
         ...state,
       }
     }
-    case EDomainActions.GetWatchList: {
+    case EWatchListActions.GetWatchList: {
       
       return {
         ...state,

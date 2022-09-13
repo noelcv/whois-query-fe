@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, RequiredValidator } from '@angular/forms';
-import { GetDomainQuery, DisplayResults} from 'src/app/store/actions/domain.actions';
+import { GetDomainQuery } from 'src/app/store/actions/domain.actions';
+
 import { IAppState } from 'src/app/store/states/app.state';
 import { DomainService } from '../../services/domain.service';
 import { select, Store } from '@ngrx/store'
 import { IQuery } from 'src/app/types/domainQuery.interface';
 import { selectedDomain } from 'src/app/store/selectors/domain.selectors';
 import { IDomainResult } from 'src/app/types/domainResult.interface';
+import { DisplayResults } from 'src/app/store/actions/ui.actions';
 
 @Component({
   selector: 'app-search-bar',

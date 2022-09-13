@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
-import { AddDomainToWatchList, GetWatchList } from 'src/app/store/actions/domain.actions';
+import { AddDomainToWatchList, GetWatchList } from 'src/app/store/actions/watchlist.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { domainMapper } from 'src/app/utils/domainMapper';
 

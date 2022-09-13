@@ -1,5 +1,16 @@
 # WhoisQueryFe
 
+## TODOS:
+- JWT
+- Same-site policy
+- Headers at Get Request
+- Enforce client-side validation and feedback
+- ErrorBoundary
+- Test suite
+- Deployment
+- Finish displaying logic for displaying parsed favorites
+- removeFromWatchList action logic
+
 ## State Management
 
 To make the app truly reactive and ready to be manageable at scale, we opted to manage state with NgRx and recreate Redux Patterns to establish a single source of truth to manage the interactions on the client-side.
@@ -14,7 +25,7 @@ To make the app truly reactive and ready to be manageable at scale, we opted to 
 
 ## Modularity and Composibility 
 We procured to keep the code modular, the functions pure and keep side effects to the bare minimum. Example given, instead of chaining multiple actions within an effect,
-we opted to draft highly targeted actions with a tight scope of execution, actionable and dispatchable from the UI.
+we opted to draft highly targeted actions collections (Domain (API actions), UI (User Interface and User Experience) and WatchList (for additional Ui filtering and scope management)). Each of the actions within this collection has a tight scope of execution, actionable and dispatchable from the UI.
 
 ## Tailwind
 For styling our UI, we opted for TailwindCSS, not only for allowing for fast prototyping, but also for the optimized CSS builds, which are significantly smaller than regular CSS.

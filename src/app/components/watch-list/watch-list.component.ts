@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
-import { DisplayFavorites, DisplayResults } from 'src/app/store/actions/domain.actions';
+import { DisplayFavorites, DisplayResults } from 'src/app/store/actions/ui.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
 
