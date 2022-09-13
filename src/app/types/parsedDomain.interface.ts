@@ -1,4 +1,5 @@
 export interface IParsedDomain {
+  uid?: string;
   domainName: string,
   registrarId: string,
   registrarName: string,

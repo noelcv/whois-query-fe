@@ -4,7 +4,8 @@ import { IWatchListState } from "../states/watchList.state";
 
 const checkWatchList = (state: IAppState) => state.watchList;
 
+
 export const selectedWatchList = createSelector(
   checkWatchList,
-  (state: IWatchListState) => state.myWatchList
+  (state: IWatchListState) => state.selectedFavorite
 )

@@ -18,6 +18,7 @@ export class WatchListComponent implements OnInit {
   watchListHandler() {
     this._store.dispatch(new DisplayResults(false))
     this._store.dispatch(new DisplayFavorites(true))
+    //TODO: dispatch GetSelectedFavorite(payload)
   }
   
   constructor(private _store: Store<IAppState>) { }

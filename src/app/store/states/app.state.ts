@@ -13,7 +13,7 @@ export interface IAppState {
   displayFavorites: IFavoritesUiState;
   watchList: IWatchListState
 }
-/*this is the equivalent of the store in RTK -
+/*this is the equivalent to the store in RTK -
 *we register the different state for the different slices,
 *i.e., (reducers + actions)
 */

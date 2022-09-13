@@ -7,6 +7,7 @@ import { ResultsUiReducers } from "./resultsUi.reducer";
 import { watchListReducers } from "./watchList.reducer";
 import { FavoritesUiReducers } from "./favoritesUi.reducer";
 
+//match the reducers with the app state
 export const appReducers: ActionReducerMap<IAppState, any> = {
   router: routerReducer,
   domain: domainReducers,
@@ -15,3 +16,4 @@ export const appReducers: ActionReducerMap<IAppState, any> = {
   displayFavorites: FavoritesUiReducers,
   watchList: watchListReducers
 };
+

@@ -10,19 +10,22 @@ export const watchListReducers = (
   switch (action.type) {
     
     case EWatchListActions.AddDomainToWatchList: {
-      state = {
-        myWatchList: [...state.myWatchList, action.payload]}
+      state = {myWatchList: [...state.myWatchList, action.payload]}
     
-        
-     //TODO: implement RemoveDomainFromWatchList + add ID to IParsedDomain Interface
-      return {
-        ...state,
-      }
+      return {...state}
     }
     case EWatchListActions.GetWatchList: {
       
+      return {...state}
+    }
+    
+    case EWatchListActions.SelectFromWatchList: {
+      
+      const selectedDomain = state.myWatchList
+        .filter(domain => domain.uid === action.payload.uid)[0];
+      
       return {
-        ...state,
+        ...state, selectedFavorite: selectedDomain
       }
     }
     default:
