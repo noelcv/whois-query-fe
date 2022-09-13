@@ -44,7 +44,6 @@ export class SearchbarComponent implements OnInit {
       const payload: IQuery = {
         sld: this.domainQueryForm.value.sldInput,
         tld: this.domainQueryForm.value.tldInput,
-
       }
       this._store.dispatch(new GetDomainQuery(payload));
       this._store.dispatch(new DisplayResults(true))
