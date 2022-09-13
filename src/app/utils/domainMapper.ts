@@ -6,7 +6,7 @@ export const domainMapper = (rawResponse: string): IParsedDomain => {
   let cleanResponse = rawResponse.split('\r\n')
   
   // Map the response to a domain object
-  let domain = cleanResponse[0].split(/:/).map(element => element.trim())[1]
+  let domainName = cleanResponse[0].split(/:/).map(element => element.trim())[1]
   let registrarId = cleanResponse[1].split(/:/).map(element => element.trim())[1]
   let registrarWhoisServer = cleanResponse[2].split(/:/).map(element => element.trim())[1]
   //TODO: refine logic let registrarUrl = cleanResponse[3].split(/:/).map(element => element.trim())[1]
@@ -17,7 +17,7 @@ export const domainMapper = (rawResponse: string): IParsedDomain => {
   let registrarIanaId = cleanResponse[8].split(/:/).map(element => element.trim())[1]
 
   let parsedDomain = {
-    domain,
+    domainName,
     registrarId,
     registrarName,
     registrarWhoisServer,

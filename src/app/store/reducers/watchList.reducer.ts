@@ -8,12 +8,21 @@ export const watchListReducers = (
   action: DomainActions
 ): IWatchListState => {
   switch (action.type) {
+    
     case EDomainActions.AddDomainToWatchList: {
       state = {
         myWatchList: [...state.myWatchList, action.payload]}
     
+        
+     //TODO: implement RemoveDomainFromWatchList + add ID to IParsedDomain Interface
       return {
-        ...state
+        ...state,
+      }
+    }
+    case EDomainActions.GetWatchList: {
+      
+      return {
+        ...state,
       }
     }
     default:

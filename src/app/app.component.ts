@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'whois-query-fe';
 
   domainResult$ = this._store.pipe(select('domain'))
+  watchList$ = this._store.pipe(select('watchList'))
 
   constructor(private _store: Store<IAppState>) {}
 

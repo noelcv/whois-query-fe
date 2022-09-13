@@ -7,7 +7,8 @@ export enum EDomainActions {
   GetDomainResult = '[Result Domain] Get Domain Result',
   GetDomainQuery = '[Query Domain] Get Domain Query',
   DisplayResults = '[Display Results] Show Result State',
-  AddDomainToWatchList = '[Add to Watchlist] Add Domain to WatchList' 
+  AddDomainToWatchList = '[Add to Watchlist] Add Domain to WatchList',
+  GetWatchList = '[WatchList] Get WatchList' 
   
   //TODO: add further actions ex. GetDomainResultSuccess, GetDomainResultError
 }
@@ -32,4 +33,9 @@ export class AddDomainToWatchList implements Action {
   constructor(public payload: IParsedDomain) {}
 }
 
-export type DomainActions = GetDomainResult | GetDomainQuery | DisplayResults | AddDomainToWatchList;
+export class GetWatchList implements Action {
+  public readonly type = EDomainActions.GetWatchList;
+ 
+}
+
+export type DomainActions = GetDomainResult | GetDomainQuery | DisplayResults | AddDomainToWatchList | GetWatchList;

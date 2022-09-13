@@ -19,6 +19,8 @@ import { environment } from '../environments/environment';
 import { appReducers } from './store/reducers/app.reducer';
 import { DomainEffects } from './store/effects/domain.effects';
 import { QueryEffects } from './store/effects/query.effects';
+import { WatchListComponent } from './components/watch-list/watch-list.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { QueryEffects } from './store/effects/query.effects';
     HeaderComponent,
     ResultsComponent,
     SearchResultsComponent,
+    WatchListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { QueryEffects } from './store/effects/query.effects';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([QueryEffects, DomainEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router'}),

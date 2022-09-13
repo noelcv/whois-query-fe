@@ -1,5 +1,5 @@
 export interface IParsedDomain {
-  domain: string,
+  domainName: string,
   registrarId: string,
   registrarName: string,
   registrarWhoisServer: string,

@@ -1,7 +1,12 @@
 <body class="bg-red-200">
   <app-header></app-header>
-  <main class="bg-red-200 max-h-fit">
-  <app-search-bar></app-search-bar>
-  <app-search-results></app-search-results>
-  </main>
+  <div class="grid grid-rows-2 grid-flow-col gap-3">
+    <aside class="row-span-1">
+      <app-watch-list></app-watch-list>
+    </aside>
+    <main class="bg-red-200 max-h-fit row-span-2 col-span-2">
+      <app-search-bar></app-search-bar>
+      <app-search-results></app-search-results>
+    </main>
+  </div>
 </body>
