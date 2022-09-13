@@ -14,8 +14,8 @@ import { v4 as uuid } from 'uuid';
   let registrarId = cleanResponse[1].split(/:/).map(element => element.trim())[1]
   let registrarWhoisServer = cleanResponse[2].split(/:/).map(element => element.trim())[1]
   //TODO: refine logic let registrarUrl = cleanResponse[3].split(/:/).map(element => element.trim())[1]
-  let creationDate = cleanResponse[5].split(/:/).map(element => element.trim())[1]
-  let expirationDate = cleanResponse[6].split(/:/).map(element => element.trim())[1]
+  let creationDate = cleanResponse[5].split(/:/).map(element => element.trim())[1].slice(0,10)
+  let expirationDate = cleanResponse[6].split(/:/).map(element => element.trim())[1].slice(0,10)
   let registrarName = cleanResponse[7].split(/:/).map(element => element.trim())[1]
   let registrarIanaId = cleanResponse[8].split(/:/).map(element => element.trim())[1]
 
