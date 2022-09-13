@@ -7,7 +7,7 @@
         <h2>Results</h2>
         <button
           (click)="addToWatchList(domainResult$)"
-          class="w-1/4 h-20 bg-teal-600 text-md text-white font-extralight active:bg-teal-800 active:font-semibold"
+          class="w-1/4 h-20 min-w-fit bg-teal-600 text-md text-white font-extralight active:bg-teal-800 active:font-semibold"
         >
           Add to WatchList
         </button>
@@ -70,8 +70,8 @@
           <p class="text-lg font-bold">Raw Whois Response:</p>
           <p class="max-w-prose text-md leading-8">{{ selectedDomain?.rawResponse }}</p>
         </div>
-        
-        
+
+
       </div>
     </div>
   </div>

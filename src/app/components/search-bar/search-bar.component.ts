@@ -1,14 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, RequiredValidator } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl, RequiredValidator } from '@angular/forms';
 import { GetDomainQuery } from 'src/app/store/actions/domain.actions';
-
 import { IAppState } from 'src/app/store/states/app.state';
-import { DomainService } from '../../services/domain.service';
-import { select, Store } from '@ngrx/store'
+import { Store } from '@ngrx/store'
 import { IQuery } from 'src/app/types/domainQuery.interface';
-import { selectedDomain } from 'src/app/store/selectors/domain.selectors';
-import { IDomainResult } from 'src/app/types/domainResult.interface';
 import { DisplayResults } from 'src/app/store/actions/ui.actions';
+import { forbiddenDomainValidator } from 'src/app/utils/forbiddenDomainValidator';
 
 @Component({
   selector: 'app-search-bar',
@@ -16,10 +13,15 @@ import { DisplayResults } from 'src/app/store/actions/ui.actions';
   styleUrls: ['./search-bar.component.css'],
 })
 export class SearchbarComponent implements OnInit {
+  @Input()
+  feedback: string = '';
+
   selectedTld = 'com'; //define default value for form
   domainQueryForm: FormGroup = this.formBuilder.group({
-    sldInput: ['', Validators.minLength(1)],
-    tldInput: [this.selectedTld, Validators.minLength(1)],
+    sldInput: ['',[
+    Validators.required,
+    forbiddenDomainValidator(/[^a-zA-Zäàöéèü0-9-]/)]],
+    tldInput: [this.selectedTld],
   });
 
   onKey(event: KeyboardEvent) {
@@ -33,27 +35,23 @@ export class SearchbarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.domainQueryForm.valueChanges.subscribe((form) => {
-      console.log(form);
-    });
+    this.domainQueryForm.valueChanges.subscribe();
 
   }
 
-  submitHandler() {
+  onSubmit() {
     try {
       const payload: IQuery = {
         sld: this.domainQueryForm.value.sldInput,
         tld: this.domainQueryForm.value.tldInput,
-      };
-      //NgRx approach
+
+      }
       this._store.dispatch(new GetDomainQuery(payload));
       this._store.dispatch(new DisplayResults(true))
-
       this.domainQueryForm.controls['sldInput'].reset();
 
     } catch (err) {
       console.log('❌ Error submitting query: ', err);
     }
-
   }
 }

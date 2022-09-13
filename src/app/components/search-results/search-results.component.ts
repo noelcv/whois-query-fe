@@ -17,13 +17,13 @@ export class SearchResultsComponent implements OnInit {
   domainResult$ = this._store.pipe(select('domain'))
   displayUI$ = this._store.pipe(select('display'))
   displayFavorites$ = this._store.pipe(select('displayFavorites'));
-  
+
   selectedDomain: IParsedDomain | undefined = undefined
   selectedFavorite$ = this._store.pipe(select('watchList')).subscribe( domain => {
     if (domain.selectedFavorite) {
     this.selectedDomain = domain.selectedFavorite}
   })
-  
+
 
   addToWatchList(domainResult$: any) {
     let payload: string = domainResult$.actionsObserver._value.payload
@@ -32,7 +32,7 @@ export class SearchResultsComponent implements OnInit {
     this._store.dispatch( new AddDomainToWatchList(objectToStore))
     this._store.dispatch( new GetWatchList())
   }
-  
+
   removeFromWatchList(selectedDomain: IParsedDomain | undefined) {
     if (selectedDomain) {
       console.log(selectedDomain, 'selected domain inside remove from watchlist')
