@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
 import { environment } from 'src/environments/environment';
-import { GetDomainResult } from './store/actions/domain.actions';
 import { IAppState } from './store/states/app.state';
 
 @Component({

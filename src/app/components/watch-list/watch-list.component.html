@@ -1,12 +1,12 @@
 
-  <div class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-3/4 -my-22 mx-auto max-h-fit">
+  <div class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-3/4 -my-22 mx-auto max-h-fit md:min-w-fit md:px-2">
     <div class="flex flex-col my-5 justify-center text-zinc-100 max-h-fit">
         <h3 class="text-lg">WatchList</h3>
       <div  class="max-w-prose text-md leading-8 flex flex-col py-2 justify-center">
         <div class="py-2" *ngFor="let domain of watchListDomains">
-          
+
         <button (click)="watchListHandler(domain)"
-        class="min-w-20 max-w-fit px-2 h-10 bg-teal-600 text-md text-white font-extralight active:bg-teal-800 active:font-semibold"> 
+        class="min-w-20 max-w-fit px-2 h-10 bg-teal-600 text-md text-white font-extralight active:bg-teal-800 active:font-semibold">
           {{domain.domainName}} </button>
       </div>
     </div>
