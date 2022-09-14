@@ -1,8 +1,18 @@
 # WhoisQuery Fe
-
+Repository for the front-end of a WhoisQuery Application developed with Angular.
+The backend repo can be found <a href="https://github.com/noelcv/whois-query-be" target="_blank">here</a>
 <img src="./screenshots/InputValidation.png">
 
-Repository for the front-end of a WhoisQuery Application developed with Angular.
+
+
+## Frontend Tech-Stack Overview
+
+<p align="left">
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="36" height="36" alt="TypeScript" /></a> 
+<a href="https://angular.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" width="36" height="36" alt="Angular" /></a> 
+<a href="https://ngrx.io/"><img width="36" height="36" src="https://cdn.cdnlogo.com/logos/n/66/ngrx.svg"></a> 
+<a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" width="36" height="36" alt="TailwindCSS" /></a>
+</p>
 
 ## State Management
 
@@ -38,7 +48,7 @@ For styling our UI, we opted for TailwindCSS, not only for allowing for fast pro
 
 Although the core of the data validation strategy occurs on the server-side, we still implemented client-side validation on Reactive Forms and disable submission when forbidden characters or missing fields are missing.
 
-Naturally, this doesn't prevent curl / Man-in-the-middle attacks, but for that, we have server-side validation.
+Naturally, this doesn't prevent curl / Man-in-the-middle or XSS attacks by itself, but our production environments count with SSL encryption, and we also besides have server-side validation and CORS Policies.
 
   
 
@@ -59,9 +69,7 @@ Front-End: Vercel
 ## Roadmap
 As further steps, I would refine the following steps: 
   
-📌 Implement JWT   
-📌 Narrow whitelisted Allowed CORS Requests and establish Same-site policies  
-📌 Strict the scope of Headers for the Get Requests (considering that's currently the only interaction with the backend)  
+📌 Implement JWT    
 📌 Expand ErrorBoundaries and Pending / Loading responses  
 📌 Expand Test suite  
 📌 Responsive Design: Elaborate on media queries for adaptive breakpoint layouts.  
