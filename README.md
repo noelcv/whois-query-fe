@@ -1,6 +1,8 @@
-# WhoisQueryFe
+# WhoisQuery Fe
 
+<img src="./screenshots/InputValidation.png">
 
+Repository for the front-end of a WhoisQuery Application developed with Angular.
 
 ## State Management
 
@@ -32,6 +34,8 @@ For styling our UI, we opted for TailwindCSS, not only for allowing for fast pro
 
 ### Client-side input sanitization
 
+<img src="./screenshots/InputValidationSQLinjection.png">
+
 Although the core of the data validation strategy occurs on the server-side, we still implemented client-side validation on Reactive Forms and disable submission when forbidden characters or missing fields are missing.
 
 Naturally, this doesn't prevent curl / Man-in-the-middle attacks, but for that, we have server-side validation.
@@ -60,12 +64,15 @@ As further steps, I would refine the following steps:
 📌 Strict the scope of Headers for the Get Requests (considering that's currently the only interaction with the backend)  
 📌 Expand ErrorBoundaries and Pending / Loading responses  
 📌 Expand Test suite  
-📌 Responsive Design: Elaborate on media queries for adaptive breakpoint layouts.
+📌 Responsive Design: Elaborate on media queries for adaptive breakpoint layouts.  
+📌 Further CRUD operations for data persistance of the user's watchlist options.
 
 ## Other considerations
 Currently the API request is returning a raw response, which corresponds to an interface IDomainResult that is used for the first load.
-
+<img src="./screenshots/RawResult.png">
 Once the user adds a domain to the WatchList, once he clicks it, the response is than parsed to a "prettified" version with a selection of relevant fields from the Whois Query.
+
+<img src="./screenshots/SelectedFromWatchList.png">
 
 If I would get back to it, I would opt for mapping the response to an Interface on the server-side and return it afterwards.
 
