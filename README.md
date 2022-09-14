@@ -1,28 +1,29 @@
 # WhoisQueryFe
 
-## TODOS:
-- JWT
-- Same-site policy
-- Headers at Get Request
-- ErrorBoundary
-- Test suite
-- Deployment
+
 
 ## State Management
 
-To make the app truly reactive and ready to be manageable at scale, we opted to manage state with NgRx and recreate Redux Patterns to establish a single source of truth to manage the interactions on the client-side.
+To make the app truly reactive and ready to be manageable at scale, we opted to manage state with **NgRx** and recreate Redux-like Patterns to establish a single source of truth to manage the interactions on the client-side.
 
----- STORE
-|___ state
-|___ actions
-|___ reducers
-|___ effects
+ 🗃 STORE  
+|___ state  
+|___ actions  
+|___ reducers  
+|___ effects  
 |___ selectors
 
 
-## Modularity and Composibility 
-We procured to keep the code modular, the functions pure and keep side effects to the bare minimum. Example given, instead of chaining multiple actions within an effect,
-we opted to draft highly targeted actions collections (Domain (API actions), UI (User Interface and User Experience) and WatchList (for additional Ui filtering and scope management)). Each of the actions within this collection has a tight scope of execution, actionable and dispatchable from the UI.
+## Modularity and Composability 
+We procured to keep the code modular, the functions pure and keep side effects to the bare minimum. 
+
+Example given, instead of chaining multiple actions within an effect, we opted to draft highly targeted action collections, with a tight scope of execution, that can be atomically actionable and dispatchable as needed from the UI.
+
+- Domain Actions - for API interactions
+- UI Actions - for User Interface / User Experience interactions and affordances (e.g: display/hide results, provide validation feedback on user input, etc.)
+- WatchList (for additional Ui filtering and scope management)
+
+
 
 ## Tailwind
 For styling our UI, we opted for TailwindCSS, not only for allowing for fast prototyping, but also for the optimized CSS builds, which are significantly smaller than regular CSS.
@@ -31,19 +32,42 @@ For styling our UI, we opted for TailwindCSS, not only for allowing for fast pro
 
 ### Client-side input sanitization
 
-Combined with a server-side validation strategy with client-side filtering to provide imediate feedback to the client
+Although the core of the data validation strategy occurs on the server-side, we still implemented client-side validation on Reactive Forms and disable submission when forbidden characters or missing fields are missing.
 
-#### Credential and Personally Identifiable Information (PII)
+Naturally, this doesn't prevent curl / Man-in-the-middle attacks, but for that, we have server-side validation.
 
-Although we are not dealing with highly sensitive information (such as passwords, credit card details, etc), we procured to prevent browser caching of user inputs we set with assignable attributes to override default configuration.
+  
+
+### Credential and Personally Identifiable Information (PII)
+
+Although we are not dealing with highly-sensitive information (such as passwords, credit card details, etc), we procured to prevent browser caching of user inputs by setting HTML attributes to override the default configuration.
 ```
     <input formControlName="sldInput" class="w-3/4 h-20 text-xl p-10" type="text" placeholder="Enter a domain name" type="text" min-length="1" maxlength="63" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">>
 ```
 
 ## Deployment
 
-Backend - Heroku
-Front-End - Vercel - https://vercel.com/guides/deploying-angular-with-vercel
+Backend: Heroku 
+
+Front-End: Vercel
+
+
+## Roadmap
+As further steps, I would refine the following steps: 
+  
+📌 Implement JWT   
+📌 Narrow whitelisted Allowed CORS Requests and establish Same-site policies  
+📌 Strict the scope of Headers for the Get Requests (considering that's currently the only interaction with the backend)  
+📌 Expand ErrorBoundaries and Pending / Loading responses  
+📌 Expand Test suite  
+📌 Responsive Design: Elaborate on media queries for adaptive breakpoint layouts.
+
+## Other considerations
+Currently the API request is returning a raw response, which corresponds to an interface IDomainResult that is used for the first load.
+
+Once the user adds a domain to the WatchList, once he clicks it, the response is than parsed to a "prettified" version with a selection of relevant fields from the Whois Query.
+
+If I would get back to it, I would opt for mapping the response to an Interface on the server-side and return it afterwards.
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
