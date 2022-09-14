@@ -1,6 +1,6 @@
 <ng-template [ngIf]="(displayUI$ | async)?.show === true">
   <div
-    class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto max-h-fit sm:min-w-fit sm:ml-36 sm:px-2 md:min-w-fit md:ml-28 md:px-2 xl:min-w-full xl:ml-32 xl:px-2">
+    class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto min-w-fit max-h-fit max-w-xs px-2 -ml-6 sm:ml-36 sm:px-2 md:min-w-fit md:ml-36 md:px-2 lg:ml-36 xl:min-w-fit xl:ml-36 xl:px-2">
     <div class="flex flex-col my-5 flex-start text-zinc-100">
       <div class="flex flex-row justify-between align-middle">
         <h2>Results</h2>
@@ -23,7 +23,7 @@
 
 <ng-template [ngIf]="(displayFavorites$ | async)?.showFavorite === true">
   <div
-    class="flex justify-center shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto min-w-fit max-h-fit sm:min-w-fit sm:ml-36 sm:px-2 md:min-w-fit md:ml-28 md:px-2 xl:min-w-full xl:ml-32 xl:px-2"
+    class="flex justify-start shadow-xl bg-slate-800 opacity-80 rounded-sm backdrop-opacity-70 w-2/4 my-12 mx-auto min-w-fit max-h-fit max-w-xs px-2 -ml-6  sm:ml-36 sm:px-2 md:min-w-fit md:ml-28 md:px-2 xl:min-w-fit xl:ml-36 xl:px-2"
   >
     <div class="flex flex-col my-5 flex-start text-zinc-100">
       <div class="flex flex-row justify-between align-middle">
