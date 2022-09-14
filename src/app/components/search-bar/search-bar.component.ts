@@ -4,7 +4,7 @@ import { GetDomainQuery } from 'src/app/store/actions/domain.actions';
 import { IAppState } from 'src/app/store/states/app.state';
 import { select, Store } from '@ngrx/store'
 import { IQuery } from 'src/app/types/domainQuery.interface';
-import { DisplayFeedback, DisplayResults } from 'src/app/store/actions/ui.actions';
+import { DisplayFavorites, DisplayFeedback, DisplayResults } from 'src/app/store/actions/ui.actions';
 import { forbiddenDomainValidator } from 'src/app/utils/forbiddenDomainValidator';
 
 @Component({
@@ -30,6 +30,7 @@ export class SearchbarComponent implements OnInit {
     if (event)
     this._store.dispatch(new DisplayResults(false));
     this._store.dispatch(new DisplayFeedback(true));
+    this._store.dispatch(new DisplayFavorites(false))
   }
 
   constructor(
