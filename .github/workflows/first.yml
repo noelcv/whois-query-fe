@@ -24,10 +24,8 @@ jobs:
       needs: job2 # make job3 dependable of job2 - it will only run after job2
       runs-on: macos-latest
       steps:
-        - name: Step one
-          uses: actions/checkout@v2
-        - name: Step two
-          run: echo new Date()
+        - name: get Date
+          run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
     job4:
       name: Fourth job
       needs: [job1, job2, job3]
