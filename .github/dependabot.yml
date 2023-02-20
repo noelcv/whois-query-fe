@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      timezone: "05:00 UTC"
+    allow:
+      # define environments for automatic package management
+      - dependency-type: "production"
+    ignore:
+      - dependency-name: "@angular-devkit/build-angular"
