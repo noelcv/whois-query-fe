@@ -1,5 +1,5 @@
 name: first
-on: push
+on: push #trigger
 jobs:
     job1:
       name: First job
@@ -13,6 +13,7 @@ jobs:
 
     job2:
       name: Second job
+      needs: job1 # make job2 dependable of job1 - it will only run after job1
       runs-on: windows-latest #Powershell
       steps:
         - name: Step one
