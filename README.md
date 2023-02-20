@@ -35,49 +35,71 @@ Example given, instead of chaining multiple actions within an effect, we opted t
 - UI Actions - for User Interface / User Experience interactions and affordances (e.g: display/hide results, provide validation feedback on user input, etc.)
 - WatchList (for additional Ui filtering and scope management)
 
-
-
 ## Tailwind
+
 For styling our UI, we opted for TailwindCSS, not only for allowing for fast prototyping, but also for the optimized CSS builds, which are significantly smaller than regular CSS.
 
 ## Security
 
 ### Client-side input sanitization
 
+```jsx
 <img src="./screenshots/InputValidationSQLinjection.png">
+```
 
 Although the core of the data validation strategy occurs on the server-side, we still implemented client-side validation on Reactive Forms and disable submission when forbidden characters or missing fields are missing.
 
 Naturally, this doesn't prevent curl / Man-in-the-middle or XSS attacks by itself, but our production environments count with SSL encryption, and we also besides have server-side validation and CORS Policies.
 
-  
-
 ### Credential and Personally Identifiable Information (PII)
 
 Although we are not dealing with highly-sensitive information (such as passwords, credit card details, etc), we procured to prevent browser caching of user inputs by setting HTML attributes to override the default configuration.
-```
+
+```jsx
     <input formControlName="sldInput" class="w-3/4 h-20 text-xl p-10" type="text" placeholder="Enter a domain name" type="text" min-length="1" maxlength="63" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off">>
 ```
 
 ## Deployment
 
-Backend: Heroku 
+Backend: Heroku
 
 Front-End: Vercel
 
+## Dependabot
+
+Enable automatic package management with dependabot.
+
+```yml
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      # to distinguish between development and production environments
+      - dependency-type: "production"
+    ignore:
+      # dependencies listed here will be ignored
+      - dependency-name: "@angular-devkit/build-angular"
+```
 
 ## Roadmap
+
 As further steps, I would refine the following steps: 
   
-📌 Implement JWT    
+📌 Implement JWT
 📌 Expand ErrorBoundaries and Pending / Loading responses  
 📌 Expand Test suite  
 📌 Responsive Design: Elaborate on media queries for adaptive breakpoint layouts.  
 📌 Further CRUD operations for data persistance of the user's watchlist options.
 
 ## Other considerations
+
 Currently the API request is returning a raw response, which corresponds to an interface IDomainResult that is used for the first load.
+
 <img src="./screenshots/RawResult.png">
+
 Once the user adds a domain to the WatchList, once he clicks it, the response is than parsed to a "prettified" version with a selection of relevant fields from the Whois Query.
 
 <img src="./screenshots/SelectedFromWatchList.png">
