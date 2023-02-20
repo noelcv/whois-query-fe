@@ -75,8 +75,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
-      timezone: "05:00 UTC"
+      interval: "daily"
     allow:
       # to distinguish between development and production environments
       - dependency-type: "production"
