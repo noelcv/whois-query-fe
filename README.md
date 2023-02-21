@@ -1,5 +1,6 @@
 # WhoisQuery Fe
 [![CodeFactor](https://www.codefactor.io/repository/github/noelcv/whois-query-fe/badge)](https://www.codefactor.io/repository/github/noelcv/whois-query-fe)
+
 Repository for the front-end of a WhoisQuery Application developed with Angular.
 The backend repo can be found <a href="https://github.com/noelcv/whois-query-be" target="_blank">here</a>
 <img src="./screenshots/InputValidation.png">
