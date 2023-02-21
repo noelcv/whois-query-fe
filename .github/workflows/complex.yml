@@ -1,4 +1,4 @@
-name: first
+name: Complex
 on: push #trigger
 jobs:
     job1:
