@@ -1,3 +1,4 @@
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
 import { DisplayFavorites, DisplayResults } from 'src/app/store/actions/ui.actions';
@@ -10,7 +11,9 @@ import { domainMapper } from 'src/app/utils/domainMapper';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.css']
+  imports: [AsyncPipe, NgIf],
+  standalone: true,
+  styleUrls: []
 })
 
 export class SearchResultsComponent implements OnInit {

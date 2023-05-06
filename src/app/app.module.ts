@@ -27,7 +27,6 @@ import { CommonModule } from '@angular/common';
     HomeComponent,
     SearchbarComponent,
     HeaderComponent,
-    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +40,7 @@ import { CommonModule } from '@angular/common';
     EffectsModule.forRoot([QueryEffects, DomainEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router'}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
+    SearchResultsComponent,
     WatchListComponent
   ],
   providers: [HttpClientModule, DomainService],
