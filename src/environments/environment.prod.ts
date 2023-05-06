@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://whoisquery-be.herokuapp.com/whois'
+  apiUrl: 'https://whois-query-ekfjbdgyd-noelcv.vercel.app/whois'
 };
 
