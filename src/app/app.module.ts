@@ -25,7 +25,6 @@ import { CommonModule } from '@angular/common';
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchbarComponent,
     HeaderComponent,
   ],
   imports: [
@@ -41,6 +40,7 @@ import { CommonModule } from '@angular/common';
     StoreRouterConnectingModule.forRoot({ stateKey: 'router'}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     SearchResultsComponent,
+    SearchbarComponent,
     WatchListComponent
   ],
   providers: [HttpClientModule, DomainService],
