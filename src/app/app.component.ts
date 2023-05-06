@@ -1,12 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store'
+import { AsyncPipe } from '@angular/common';
+import { ApplicationRef, Component, OnInit } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
+import { EffectsRootModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { Store, select, StoreModule, StoreRootModule } from '@ngrx/store'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import { HomeComponent } from './components/home/home.component';
 import { IAppState } from './store/states/app.state';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports: [HomeComponent, AsyncPipe, RouterOutlet, StoreRootModule, EffectsRootModule, StoreRouterConnectingModule, StoreDevtoolsModule ],
+  standalone: true,
 })
 export class AppComponent implements OnInit {
   title = 'whois-query-fe';
@@ -21,3 +30,6 @@ export class AppComponent implements OnInit {
   }
 
 }
+
+
+
