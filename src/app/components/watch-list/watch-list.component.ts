@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
 import { DisplayFavorites, DisplayResults } from 'src/app/store/actions/ui.actions';
@@ -8,6 +9,8 @@ import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
 @Component({
   selector: 'app-watch-list',
   templateUrl: './watch-list.component.html',
+  imports: [NgFor],
+  standalone: true,
   styleUrls: []
 })
 export class WatchListComponent implements OnInit {

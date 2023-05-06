@@ -28,7 +28,6 @@ import { CommonModule } from '@angular/common';
     SearchbarComponent,
     HeaderComponent,
     SearchResultsComponent,
-    WatchListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +40,8 @@ import { CommonModule } from '@angular/common';
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([QueryEffects, DomainEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router'}),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    WatchListComponent
   ],
   providers: [HttpClientModule, DomainService],
   bootstrap: [AppComponent]
