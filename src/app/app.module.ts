@@ -24,8 +24,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +39,8 @@ import { CommonModule } from '@angular/common';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     SearchResultsComponent,
     SearchbarComponent,
+    HomeComponent,
+    HeaderComponent,
     WatchListComponent
   ],
   providers: [HttpClientModule, DomainService],
