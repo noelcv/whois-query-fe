@@ -5,7 +5,6 @@ updates:
     schedule:
       interval: "daily"
     allow:
-      # define environments for automatic package management
       - dependency-type: "production"
       # allow for specific dependencies - for example internal dependencies
       - dependency-name: "tailwindcss"
