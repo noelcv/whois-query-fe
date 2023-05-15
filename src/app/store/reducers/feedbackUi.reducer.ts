@@ -7,7 +7,9 @@ export const FeedbackUiReducers = (
 ): IValidationFeedbackUiState => {
   switch (action.type) {
     case EUiActions.DisplayFeedback: {
-      (() => {setTimeout(() => {}, 2500)})
+      (() => {setTimeout(() => {
+        //intentionally empty
+      }, 2500)})
       return {
         display: action.payload
       }

@@ -7,7 +7,9 @@ export const FavoritesUiReducers = (
 ): IFavoritesUiState => {
   switch (action.type) {
     case EUiActions.DisplayFavorites: {
-      (() => {setTimeout(() => {}, 2500)})
+      (() => {setTimeout(() => {
+        //intentionally empty
+      }, 2500)})
       return {
         showFavorite: action.payload
       }

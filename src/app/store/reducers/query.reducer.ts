@@ -1,4 +1,3 @@
-import { IQuery } from 'src/app/types/domainQuery.interface';
 import { EDomainActions } from '../actions/domain.actions';
 import { DomainActions } from '../actions/domain.actions';
 import { initialQueryState, IQueryState } from '../states/query.state';

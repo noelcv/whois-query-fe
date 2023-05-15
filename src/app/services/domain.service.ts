@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IDomainResult } from '../types/domainResult.interface';
 import { IQuery } from '../types/domainQuery.interface';
-import { _USER_RUNTIME_CHECKS } from '@ngrx/store/src/tokens';
 import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',

@@ -1,7 +1,4 @@
-import { Action } from '@ngrx/store'
-import { IQuery } from 'src/app/types/domainQuery.interface';
-import { IDomainResult } from 'src/app/types/domainResult.interface';
-import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
+import { Action } from '@ngrx/store';
 
 export enum EUiActions {
   DisplayResults = '[Display Results] Show Result State',

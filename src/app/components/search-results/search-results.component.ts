@@ -1,10 +1,9 @@
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store'
-import { DisplayFavorites, DisplayResults } from 'src/app/store/actions/ui.actions';
+import { DisplayFavorites } from 'src/app/store/actions/ui.actions';
 import { AddDomainToWatchList, GetWatchList, RemoveFromWatchList } from 'src/app/store/actions/watchlist.actions';
 import { IAppState } from 'src/app/store/states/app.state';
-import { IDomainResult } from 'src/app/types/domainResult.interface';
 import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
 import { domainMapper } from 'src/app/utils/domainMapper';
 
@@ -30,7 +29,7 @@ export class SearchResultsComponent implements OnInit {
 
 
   addToWatchList(domainResult$: any) {
-    let payload: string = domainResult$.actionsObserver._value.payload
+    const payload: string = domainResult$.actionsObserver._value.payload
     const objectToStore = domainMapper(payload)
     this._store.dispatch( new AddDomainToWatchList(objectToStore))
     this._store.dispatch( new GetWatchList())

@@ -7,7 +7,9 @@ export const ResultsUiReducers = (
 ): IResultsUiState => {
   switch (action.type) {
     case EUiActions.DisplayResults: {
-      (() => {setTimeout(() => {}, 2500)})
+      (() => {setTimeout(() => {
+        //intentionally empty
+      }, 2500)})
       return {
         show: action.payload
       }

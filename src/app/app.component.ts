@@ -1,10 +1,9 @@
 import { AsyncPipe } from '@angular/common';
-import { ApplicationRef, Component, OnInit } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { EffectsRootModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { Store, select, StoreModule, StoreRootModule } from '@ngrx/store'
+import { Store, select, StoreRootModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { HomeComponent } from './components/home/home.component';

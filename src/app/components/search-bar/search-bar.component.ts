@@ -16,7 +16,7 @@ import { forbiddenDomainValidator } from 'src/app/utils/forbiddenDomainValidator
   styleUrls: [],
 })
 export class SearchbarComponent implements OnInit {
-  @Input() feedback: string = '';
+  @Input() feedback = '';
 
   feedbackUi$ = this._store.pipe(select('feedback'))
 
