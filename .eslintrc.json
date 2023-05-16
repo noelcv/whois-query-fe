@@ -30,7 +30,8 @@
         ],
         "no-empty-function": "off",
         "@typescript-eslint/no-empty-function": "off",
-        "@angular-eslint/no-empty-lifecycle-method": "off"
+        "@angular-eslint/no-empty-lifecycle-method": "off",
+        "no-trailing-spaces": "error"
       }
     },
     {
@@ -38,10 +39,7 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended",
         "plugin:@angular-eslint/template/accessibility"
-      ],
-      "rules": {
-        "no-trailing-spaces": "off"
-      }
+      ]
     },
     // only apply the prettier plugins after the eslint configs
     {
