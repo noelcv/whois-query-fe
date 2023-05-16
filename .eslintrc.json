@@ -47,10 +47,10 @@
     {
       "files": ["*.html"],
       "excludedFiles": ["*inline-template-*.component.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "extends": ["plugin:prettier/recommended"],
       "rules": {
         //override the default config to set the parser to Angular
-        "prettier/prettier": ["error", { "parser": "Angular" }]
+        "prettier/prettier": ["error", { "parser": "angular" }]
       }
     }
   ]
