@@ -12,8 +12,8 @@ export const queryReducers = (
         ...state,
         query: {
           sld: action.payload.sld,
-          tld: action.payload.tld
-        }
+          tld: action.payload.tld,
+        },
       };
     }
     default:

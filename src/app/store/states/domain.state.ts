@@ -1,5 +1,4 @@
-import { IDomainResult } from "src/app/types/domainResult.interface";
-
+import { IDomainResult } from 'src/app/types/domainResult.interface';
 
 export interface IDomainState {
   [x: string]: unknown;
@@ -9,5 +8,5 @@ export interface IDomainState {
 export const initialDomainState: IDomainState = {
   domainResult: {
     result: undefined,
-  }
-}
+  },
+};

@@ -28,5 +28,8 @@ export class DisplayFeedback implements Action {
   constructor(public payload: boolean) {}
 }
 
-
-export type UiActions = DisplayResults | DisplayFavorites | DisplaySelectedFavorite | DisplayFeedback;
+export type UiActions =
+  | DisplayResults
+  | DisplayFavorites
+  | DisplaySelectedFavorite
+  | DisplayFeedback;

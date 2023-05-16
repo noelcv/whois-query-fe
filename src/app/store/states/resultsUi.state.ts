@@ -3,5 +3,5 @@ export interface IResultsUiState {
 }
 
 export const initialResultsUiState: IResultsUiState = {
-  show: false
-}
+  show: false,
+};

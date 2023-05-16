@@ -4,11 +4,9 @@ import { Store } from '@ngrx/store';
 import { IAppState } from '../states/app.state';
 import { DomainService } from 'src/app/services/domain.service';
 
-
 @Injectable()
 export class DomainEffects {
   //TODO: replace logic here to grab after QueryEffects
-
 
   constructor(
     private _domainService: DomainService,

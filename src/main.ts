@@ -14,7 +14,11 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(HttpClientModule, DomainService, StateManagementModule, AppRoutingModule)
-  ]
-})
-  .catch(err => console.error(err));
+    importProvidersFrom(
+      HttpClientModule,
+      DomainService,
+      StateManagementModule,
+      AppRoutingModule
+    ),
+  ],
+}).catch(err => console.error(err));

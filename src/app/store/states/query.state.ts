@@ -1,4 +1,4 @@
-import { IQuery } from "src/app/types/domainQuery.interface";
+import { IQuery } from 'src/app/types/domainQuery.interface';
 
 export interface IQueryState {
   query: IQuery | null;
@@ -6,4 +6,4 @@ export interface IQueryState {
 
 export const initialQueryState: IQueryState = {
   query: null,
-}
+};

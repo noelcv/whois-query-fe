@@ -12,8 +12,8 @@ import { QueryEffects } from './store/effects/query.effects';
   imports: [
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot([QueryEffects, DomainEffects]),
-    StoreRouterConnectingModule.forRoot({ stateKey: 'router'}),
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
 })
-export class StateManagementModule { }
+export class StateManagementModule {}

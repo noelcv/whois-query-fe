@@ -1,5 +1,8 @@
 import { EUiActions, UiActions } from '../actions/ui.actions';
-import { IFavoritesUiState, initialFavoritesUiState } from '../states/favoritesUi.state';
+import {
+  IFavoritesUiState,
+  initialFavoritesUiState,
+} from '../states/favoritesUi.state';
 
 export const FavoritesUiReducers = (
   state = initialFavoritesUiState,
@@ -7,12 +10,14 @@ export const FavoritesUiReducers = (
 ): IFavoritesUiState => {
   switch (action.type) {
     case EUiActions.DisplayFavorites: {
-      (() => {setTimeout(() => {
-        //intentionally empty
-      }, 2500)})
+      () => {
+        setTimeout(() => {
+          //intentionally empty
+        }, 2500);
+      };
       return {
-        showFavorite: action.payload
-      }
+        showFavorite: action.payload,
+      };
     }
     default:
       return state;

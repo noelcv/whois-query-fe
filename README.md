@@ -1,11 +1,10 @@
 # WhoisQuery Fe
+
 [![CodeFactor](https://www.codefactor.io/repository/github/noelcv/whois-query-fe/badge)](https://www.codefactor.io/repository/github/noelcv/whois-query-fe)
 
 Repository for the front-end of a WhoisQuery Application developed with Angular.
 The backend repo can be found <a href="https://github.com/noelcv/whois-query-be" target="_blank">here</a>
 <img src="./screenshots/InputValidation.png">
-
-
 
 ## Frontend Tech-Stack Overview
 
@@ -20,16 +19,16 @@ The backend repo can be found <a href="https://github.com/noelcv/whois-query-be"
 
 To make the app truly reactive and ready to be manageable at scale, we opted to manage state with **NgRx** and recreate Redux-like Patterns to establish a single source of truth to manage the interactions on the client-side.
 
- 🗃 STORE  
-|___ state  
-|___ actions  
-|___ reducers  
-|___ effects  
-|___ selectors
+🗃 STORE  
+|**_ state  
+|_** actions  
+|**_ reducers  
+|_** effects  
+|\_\_\_ selectors
 
+## Modularity and Composability
 
-## Modularity and Composability 
-We procured to keep the code modular, the functions pure and keep side effects to the bare minimum. 
+We procured to keep the code modular, the functions pure and keep side effects to the bare minimum.
 
 Example given, instead of chaining multiple actions within an effect, we opted to draft highly targeted action collections, with a tight scope of execution, that can be atomically actionable and dispatchable as needed from the UI.
 
@@ -74,22 +73,22 @@ Enable automatic package management with dependabot.
 ```yml
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
     allow:
       # to distinguish between development and production environments
-      - dependency-type: "production"
+      - dependency-type: 'production'
     ignore:
       # dependencies listed here will be ignored
-      - dependency-name: "@angular-devkit/build-angular"
+      - dependency-name: '@angular-devkit/build-angular'
 ```
 
 ## Roadmap
 
-As further steps, I would refine the following steps: 
-  
+As further steps, I would refine the following steps:
+
 📌 Implement JWT
 📌 Expand ErrorBoundaries and Pending / Loading responses  
 📌 Expand Test suite  
@@ -107,7 +106,6 @@ Once the user adds a domain to the WatchList, once he clicks it, the response is
 <img src="./screenshots/SelectedFromWatchList.png">
 
 If I would get back to it, I would opt for mapping the response to an Interface on the server-side and return it afterwards.
-
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
 

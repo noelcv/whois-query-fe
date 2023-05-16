@@ -2,7 +2,7 @@ name: Test CI Pipeline
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:

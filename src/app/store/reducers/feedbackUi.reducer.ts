@@ -1,5 +1,8 @@
 import { EUiActions, UiActions } from '../actions/ui.actions';
-import { initialValidationFeedbackUiState, IValidationFeedbackUiState } from '../states/validationUi.state';
+import {
+  initialValidationFeedbackUiState,
+  IValidationFeedbackUiState,
+} from '../states/validationUi.state';
 
 export const FeedbackUiReducers = (
   state = initialValidationFeedbackUiState,
@@ -7,12 +10,14 @@ export const FeedbackUiReducers = (
 ): IValidationFeedbackUiState => {
   switch (action.type) {
     case EUiActions.DisplayFeedback: {
-      (() => {setTimeout(() => {
-        //intentionally empty
-      }, 2500)})
+      () => {
+        setTimeout(() => {
+          //intentionally empty
+        }, 2500);
+      };
       return {
-        display: action.payload
-      }
+        display: action.payload,
+      };
     }
     default:
       return state;

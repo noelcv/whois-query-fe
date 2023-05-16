@@ -8,15 +8,16 @@ import { WatchListComponent } from '../watch-list/watch-list.component';
   selector: 'app-home',
   templateUrl: './home.component.html',
   standalone: true,
-  imports: [HeaderComponent, WatchListComponent, SearchbarComponent, SearchResultsComponent],
-  styleUrls: []
+  imports: [
+    HeaderComponent,
+    WatchListComponent,
+    SearchbarComponent,
+    SearchResultsComponent,
+  ],
+  styleUrls: [],
 })
 export class HomeComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-
-  }
-
+  ngOnInit(): void {}
 }

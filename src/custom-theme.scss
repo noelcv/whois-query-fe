@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
@@ -29,16 +28,17 @@ $whois-query-fe-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$whois-query-fe-theme: mat.define-light-theme((
-  color: (
-    primary: $whois-query-fe-primary,
-    accent: $whois-query-fe-accent,
-    warn: $whois-query-fe-warn,
+$whois-query-fe-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $whois-query-fe-primary,
+      accent: $whois-query-fe-accent,
+      warn: $whois-query-fe-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-legacy-component-themes($whois-query-fe-theme);
-
