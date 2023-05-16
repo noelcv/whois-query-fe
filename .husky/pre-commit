@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-console.log("testing")
+node_modules/.bin/lint-staged
 # npm run lint:ci && npm run format
