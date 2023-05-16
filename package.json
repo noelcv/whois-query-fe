@@ -16,14 +16,14 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "./src/**/*.{ts,css, scss,html}": [
+    ".": [
       "npm run lint:ci",
       "npm run format"
     ]
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npx lint-staged"
     }
   },
   "private": true,
