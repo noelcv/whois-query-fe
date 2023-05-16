@@ -15,9 +15,15 @@
     "format": "prettier --write .",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "./src/**/*.{ts,css, scss,html}": [
+      "npm run lint:ci",
+      "npm run format"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint:ci && npm run format"
+      "pre-commit": "lint-staged"
     }
   },
   "private": true,
@@ -61,18 +67,19 @@
     "autoprefixer": "^10.4.8",
     "dotenv": "^16.0.3",
     "eslint": "^8.39.0",
+    "husky": "^8.0.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "lint-staged": "^13.2.2",
     "postcss": "^8.4.23",
     "postcss-import": "^15.1.0",
     "postcss-loader": "^7.3.0",
     "tailwindcss": "^3.3.2",
-    "typescript": "~5.0.4",
-    "husky": "^8.0.0"
+    "typescript": "~5.0.4"
   },
   "license": "MIT"
 }
