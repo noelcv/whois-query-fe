@@ -13,7 +13,18 @@ The backend repo can be found <a href="https://github.com/noelcv/whois-query-be"
 <a href="https://angular.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" width="36" height="36" alt="Angular" /></a> 
 <a href="https://ngrx.io/"><img width="36" height="36" src="https://cdn.cdnlogo.com/logos/n/66/ngrx.svg"></a> 
 <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" width="36" height="36" alt="TailwindCSS" /></a>
+<br> 
+
+<div style="border: 1px solid">
+<a href="https://github.com/actions/" target="_blank" rel="noreferrer"><img src="https://avatars.githubusercontent.com/u/44036562?s=200&v=4" width="36" height="36" alt="GitHub Actions"/></a>
+<a href="https://eslint.org/" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/ESLint_logo.svg" width="36" height="36" alt="ESLint"/></a> 
+<a href="https://prettier.io/" target="_blank" rel="noreferrer"><img src="https://prettier.io/icon.png" width="36" height="36" alt="Prettier" /></a>
+<a href="https://typicode.github.io/husky/" target="_blank" style="width: 36px; height: 36px" rel="noreferrer">🐶 husky</a>
+<a href="https://github.com/okonet/lint-staged" target="_blank" style="width: 36px; height: 36px" rel="noreferrer">🚫💩 lint-staged</a>
+</div>
 </p>
+
+
 
 ## State Management
 
@@ -35,6 +46,10 @@ Example given, instead of chaining multiple actions within an effect, we opted t
 - Domain Actions - for API interactions
 - UI Actions - for User Interface / User Experience interactions and affordances (e.g: display/hide results, provide validation feedback on user input, etc.)
 - WatchList (for additional Ui filtering and scope management)
+
+## CI/CD
+
+Add ESLint (linting), Prettier (code-formatting), Husky (for git hooks - pre-commit and pre-push) and Lint-Staged (for running linting only on staged files)
 
 ## Tailwind
 
