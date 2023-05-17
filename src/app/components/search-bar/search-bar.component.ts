@@ -28,7 +28,6 @@ export class SearchbarComponent implements OnInit {
   @Input() feedback = '';
 
   feedbackUi$ = this._store.pipe(select('feedback'));
-  testProperty: string | undefined;
 
   selectedTld = 'com'; //define default value for form
   domainQueryForm: FormGroup = this.formBuilder.group({
@@ -53,7 +52,6 @@ export class SearchbarComponent implements OnInit {
   ngOnInit(): void {
     this.domainQueryForm.valueChanges.subscribe();
     this._store.select('feedback').subscribe();
-    this.testProperty = 'test4';
   }
 
   onSubmit() {
