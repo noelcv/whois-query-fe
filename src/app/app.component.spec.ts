@@ -5,12 +5,7 @@ import { AppComponent } from './app.component';
 // describe('AppComponent', () => {
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       imports: [
-//         RouterTestingModule
-//       ],
-//       declarations: [
-//         AppComponent
-//       ],
+//       imports: [RouterTestingModule, AppComponent],
 //     }).compileComponents();
 //   });
 
@@ -20,16 +15,18 @@ import { AppComponent } from './app.component';
 //     expect(app).toBeTruthy();
 //   });
 
-// it(`should have as title 'whois-query-fe'`, () => {
-//   const fixture = TestBed.createComponent(AppComponent);
-//   const app = fixture.componentInstance;
-//   expect(app.title).toEqual('whois-query-fe');
-// });
+//   it(`should have as title 'whois-query-fe'`, () => {
+//     const fixture = TestBed.createComponent(AppComponent);
+//     const app = fixture.componentInstance;
+//     expect(app.title).toEqual('whois-query-fe');
+//   });
 
-// it('should render title', () => {
-//   const fixture = TestBed.createComponent(AppComponent);
-//   fixture.detectChanges();
-//   const compiled = fixture.nativeElement as HTMLElement;
-//   expect(compiled.querySelector('.content span')?.textContent).toContain('whois-query-fe app is running!');
-// });
+//   it('should render title', () => {
+//     const fixture = TestBed.createComponent(AppComponent);
+//     fixture.detectChanges();
+//     const compiled = fixture.nativeElement as HTMLElement;
+//     expect(compiled.querySelector('.content span')?.textContent).toContain(
+//       'whois-query-fe app is running!'
+//     );
+//   });
 // });

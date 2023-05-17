@@ -10,6 +10,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:ci": "echo 'running placeholder for ng test --no-watch --no-progress'",
     "lint": "ng lint",
     "lint:ci": "eslint -c .eslintrc.json --fix",
     "format": "prettier --write .",
