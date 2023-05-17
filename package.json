@@ -11,19 +11,13 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "lint:ci": "ng lint --quiet --fix",
+    "lint:ci": "eslint -c .eslintrc.json --fix",
     "format": "prettier --write .",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    ".": [
-      "npm run lint:ci",
-      "npm run format"
-    ]
-  },
   "husky": {
     "hooks": {
-      "pre-commit": "npx lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "private": true,
