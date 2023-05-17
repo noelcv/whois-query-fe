@@ -1,11 +1,11 @@
-import { Action } from "@ngrx/store";
-import { IParsedDomain } from "src/app/types/parsedDomain.interface";
+import { Action } from '@ngrx/store';
+import { IParsedDomain } from 'src/app/types/parsedDomain.interface';
 
 export enum EWatchListActions {
   AddDomainToWatchList = '[Add to WatchList] Add Domain to WatchList',
   GetWatchList = '[WatchList] Get WatchList',
   SelectFromWatchList = '[Selected From WatchList] Get Selected Favorite From WatchList',
-  RemoveFromWatchList = '[Remove from WatchList] Remove Domain from WatchList'
+  RemoveFromWatchList = '[Remove from WatchList] Remove Domain from WatchList',
 }
 
 //WATCHLIST ACTIONS
@@ -28,4 +28,8 @@ export class RemoveFromWatchList implements Action {
   constructor(public payload: IParsedDomain) {}
 }
 
-export type WatchListActions = AddDomainToWatchList | GetWatchList | SelectFromWatchList | RemoveFromWatchList;
+export type WatchListActions =
+  | AddDomainToWatchList
+  | GetWatchList
+  | SelectFromWatchList
+  | RemoveFromWatchList;

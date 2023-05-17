@@ -3,5 +3,5 @@ export interface IFavoritesUiState {
 }
 
 export const initialFavoritesUiState: IFavoritesUiState = {
-  showFavorite: false
-}
+  showFavorite: false,
+};

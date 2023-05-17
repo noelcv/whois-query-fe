@@ -1,12 +1,12 @@
-import { ActionReducerMap } from "@ngrx/store";
-import { routerReducer } from "@ngrx/router-store";
-import { domainReducers } from "./domain.reducer";
-import { IAppState } from "../states/app.state";
-import { queryReducers } from "./query.reducer";
-import { ResultsUiReducers } from "./resultsUi.reducer";
-import { watchListReducers } from "./watchList.reducer";
-import { FavoritesUiReducers } from "./favoritesUi.reducer";
-import { FeedbackUiReducers } from "./feedbackUi.reducer";
+import { ActionReducerMap } from '@ngrx/store';
+import { routerReducer } from '@ngrx/router-store';
+import { domainReducers } from './domain.reducer';
+import { IAppState } from '../states/app.state';
+import { queryReducers } from './query.reducer';
+import { ResultsUiReducers } from './resultsUi.reducer';
+import { watchListReducers } from './watchList.reducer';
+import { FavoritesUiReducers } from './favoritesUi.reducer';
+import { FeedbackUiReducers } from './feedbackUi.reducer';
 
 //match the reducers with the app state
 export const appReducers: ActionReducerMap<IAppState, any> = {
@@ -16,6 +16,5 @@ export const appReducers: ActionReducerMap<IAppState, any> = {
   display: ResultsUiReducers,
   displayFavorites: FavoritesUiReducers,
   watchList: watchListReducers,
-  feedback: FeedbackUiReducers
+  feedback: FeedbackUiReducers,
 };
-

@@ -3,5 +3,5 @@ export interface IValidationFeedbackUiState {
 }
 
 export const initialValidationFeedbackUiState: IValidationFeedbackUiState = {
-  display: false
-}
+  display: false,
+};

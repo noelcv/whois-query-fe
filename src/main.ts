@@ -6,6 +6,7 @@ import { AppComponent } from './app/app.component';
 import { StateManagementModule } from './app/stateManagement.module';
 import { DomainService } from './app/services/domain.service';
 import { environment } from './environments/environment';
+import { AppRoutingModule } from './app/app-routing.module';
 
 if (environment.production) {
   enableProdMode();
@@ -13,7 +14,11 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(HttpClientModule, DomainService, StateManagementModule)
-  ]
-})
-  .catch(err => console.error(err));
+    importProvidersFrom(
+      HttpClientModule,
+      DomainService,
+      StateManagementModule,
+      AppRoutingModule
+    ),
+  ],
+}).catch(err => console.error(err));

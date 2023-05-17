@@ -1,6 +1,6 @@
-import { EDomainActions } from "../actions/domain.actions";
-import { DomainActions } from "../actions/domain.actions";
-import { IDomainState, initialDomainState } from "../states/domain.state";
+import { EDomainActions } from '../actions/domain.actions';
+import { DomainActions } from '../actions/domain.actions';
+import { IDomainState, initialDomainState } from '../states/domain.state';
 
 export const domainReducers = (
   state = initialDomainState,
@@ -9,11 +9,11 @@ export const domainReducers = (
   switch (action.type) {
     case EDomainActions.GetDomainResult: {
       return {
-        ...state, domainResult: action.payload
-      }
+        ...state,
+        domainResult: action.payload,
+      };
     }
     default:
       return state;
   }
-}
-
+};
