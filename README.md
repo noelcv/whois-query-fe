@@ -28,7 +28,7 @@ The backend repo can be found <a href="https://github.com/noelcv/whois-query-be"
 
 ## State Management
 
-To make the app truly reactive and ready to be manageable at scale, we opted to manage state with **NgRx** and recreate Redux-like Patterns to establish a single source of truth to manage the interactions on the client-side.
+To make the app truly reactive and ready to be manageable at scale, we opted to manage the state with **NgRx** and recreate Redux-like Patterns to establish a single source of truth to manage the interactions on the client-side.
 
 🗃 STORE  
 |**_ state  
